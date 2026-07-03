@@ -1,0 +1,1264 @@
+{
+  "users": {
+    "zander": {
+      "username": "zander",
+      "passwordHash": "$2a$10$cYT0NhHJupxWbSu8zU5JV.KROUO4iylkbyBuvlsrWmdg1o0f76vYe",
+      "createdAt": "2026-07-03T23:11:32.671Z"
+    }
+  },
+  "sessions": {
+    "7489e733-a75d-447c-8d17-baa3ca84d7f3": {
+      "username": "zander",
+      "createdAt": "2026-07-03T23:18:30.310Z"
+    }
+  },
+  "progress": {
+    "zander": {
+      "weights": {
+        "VPN Types": 1,
+        "Chain of Custody": 1,
+        "Network Taps": 1,
+        "UTM Firewalls": 1,
+        "Taps vs Port Mirroring": 1,
+        "DR Site Types": 1,
+        "HSM vs TPM vs Secure Enclave": 1,
+        "Out-of-Band Management": 1,
+        "Device Lifecycle Planning": 1,
+        "DR Exercise Types": 1,
+        "SSRF": 1,
+        "Wireless Threats": 1,
+        "Data Retention Policy": 1,
+        "Anomalous Behavior Monitoring": 1,
+        "Cloud Shared Responsibility (PaaS)": 1,
+        "Vulnerability Scanning": 1,
+        "Port Scanning Risk": 1,
+        "IPS Response": 1,
+        "Data Roles - Owner": 1,
+        "Automation - Escalation Scripting": 1,
+        "VM Escape": 1,
+        "Mobile Device Threat Vectors": 1,
+        "DKIM Email Verification": 2.5,
+        "Insecure Protocols": 1,
+        "OCSP Stapling": 1,
+        "Conflict of Interest": 1,
+        "Data Sovereignty": 1,
+        "Wireless 802.1X Certificate Issue": 1,
+        "802.1X Authentication Backend": 1,
+        "TPM Functions": 1,
+        "Email Authentication (SPF/DKIM/DMARC)": 1,
+        "SSD Sanitization": 1,
+        "Load Balancer VIP": 1,
+        "DNSSEC": 1,
+        "Governance Models": 1,
+        "Zero Trust": 1,
+        "MOU Agreement": 1,
+        "UEFI Boot Attestation": 1,
+        "Role-Based Security Training": 1,
+        "Policy Document Structure": 1,
+        "Risk Acceptance": 1,
+        "Injection-Resistant Environments": 1,
+        "Unvalidated Redirects": 1,
+        "Shadow IT": 1,
+        "Penetration Testing Tools": 1,
+        "VM Sprawl": 1,
+        "Audit Types": 1,
+        "Cloud Service Models": 1,
+        "Input Validation (Allow Lists)": 1,
+        "Certificate Types (DV)": 1,
+        "Threat Actor Motivation": 1,
+        "AAA Authentication": 1,
+        "Embedded Systems": 1,
+        "Vulnerability Scan False Positives": 1,
+        "Tokenization": 1,
+        "MFA Factors": 1,
+        "Third-Party Supply Chain Risk": 1,
+        "Data Roles - Processor": 1,
+        "Cloud Backup Methods": 1,
+        "Responsibility Matrix": 1,
+        "LDAP for Authentication": 1,
+        "SOW Agreement": 1,
+        "Zero Trust Control Plane": 1,
+        "Forward Proxy": 1,
+        "Wireless MAC Filtering Bypass": 1,
+        "Blockchain Ledger": 1,
+        "Air Gap Isolation": 1,
+        "CIA Triad": 1,
+        "Non-repudiation": 1,
+        "Authentication Factors": 1,
+        "Gap Analysis": 1,
+        "Physical Security Controls": 1,
+        "Deception Technology": 1,
+        "Change Management Process": 1,
+        "Allow Lists and Deny Lists": 1,
+        "PKI Fundamentals": 1,
+        "Symmetric vs Asymmetric Encryption": 1,
+        "Hashing and Salting": 1,
+        "Data States": 1,
+        "Data Classification Levels": 1,
+        "Security Control Types (Functional)": 1,
+        "Security Control Categories": 1,
+        "RAID and Redundancy": 1,
+        "High Availability Concepts": 1,
+        "Backup Types": 1,
+        "Power Resiliency": 1,
+        "Threat Actor Attributes": 1,
+        "Threat Actor Motivations": 1,
+        "Message-Based Social Engineering": 1,
+        "Business Email Compromise": 1,
+        "Watering Hole Attack": 1,
+        "Typosquatting": 1,
+        "Tailgating and Piggybacking": 1,
+        "Shoulder Surfing and Dumpster Diving": 1,
+        "Ransomware": 1,
+        "Trojan vs Worm": 1,
+        "Keylogger and Spyware": 1,
+        "Rootkit": 1,
+        "Logic Bomb": 1,
+        "Brute Force Attacks": 1,
+        "DDoS Amplification": 1,
+        "Credential Replay Attacks": 1,
+        "Buffer Overflow": 1,
+        "Privilege Escalation": 1,
+        "Directory Traversal": 1,
+        "API Attacks and Resource Exhaustion": 1,
+        "Downgrade Attacks": 1,
+        "Birthday and Collision Attacks": 1,
+        "Rainbow Table Attacks": 1,
+        "Password Spraying": 1,
+        "Impossible Travel Indicator": 1,
+        "Hardening Techniques": 1,
+        "Cloud Deployment Models": 1,
+        "Infrastructure as Code": 1,
+        "Microservices Architecture": 1,
+        "Software-Defined Networking": 1,
+        "Screened Subnet (DMZ)": 1,
+        "Jump Server": 1,
+        "IDS vs IPS Placement": 1,
+        "SASE and SD-WAN": 1,
+        "Network Access Control (NAC)": 1,
+        "Attack Surface and Security Zones": 1,
+        "Recovery Metrics (RTO/RPO/MTTR/MTBF)": 1,
+        "IoT and ICS/SCADA Security": 1,
+        "Fail-Open vs Fail-Closed Design": 1,
+        "Platform Diversity and Multi-Cloud": 1,
+        "Geographic Dispersion": 1,
+        "Engineering Tradeoffs in Control Selection": 1,
+        "Continuity of Operations Planning": 1,
+        "Secure Baselines": 1,
+        "Hardening Mobile Devices": 1,
+        "Sandboxing": 1,
+        "Asset Management Lifecycle": 1,
+        "SAST and DAST": 1,
+        "CVSS and CVE Scoring": 1,
+        "SIEM and Log Aggregation": 1,
+        "Data Loss Prevention": 1,
+        "EDR and XDR": 1,
+        "SOAR Automation": 1,
+        "File Integrity Monitoring": 1,
+        "Identity Federation and SSO": 1,
+        "Access Control Models": 1,
+        "Privileged Access Management": 1,
+        "Password Policy Best Practices": 1,
+        "Passwordless Authentication": 1,
+        "Incident Response Process": 1,
+        "Root Cause Analysis": 1,
+        "Threat Hunting": 1,
+        "Order of Volatility": 1,
+        "Legal Hold": 1,
+        "Web and DNS Filtering": 1,
+        "Policy Types": 1,
+        "Standards, Procedures, and Guidelines": 1,
+        "External Governance Considerations": 1,
+        "Risk Identification and Assessment": 1,
+        "Quantitative Risk Analysis": 2.5,
+        "Qualitative vs Quantitative Risk Analysis": 1,
+        "Risk Appetite and Risk Tolerance": 1,
+        "Risk Management Strategies": 1,
+        "Business Impact Analysis": 1,
+        "Third-Party Vendor Assessment": 1,
+        "Agreement Types (MOA and NDA)": 1,
+        "Compliance Reporting and Consequences": 1,
+        "Privacy and Data Subject Rights": 1,
+        "Penetration Testing Types": 1,
+        "Security Awareness Practices": 1,
+        "NTFS": 1,
+        "EFS": 1,
+        "WPA": 1,
+        "MD5": 1,
+        "NAT": 1,
+        "PSK": 1,
+        "SHA": 1,
+        "Data Protection Officer": 1,
+        "WTLS": 1,
+        "PEAP": 1,
+        "LEAP": 1,
+        "PBQ: Common Ports": 1,
+        "PBQ: Cryptographic Concepts": 1,
+        "PBQ: Access Control Models": 1,
+        "PBQ: Backup Types": 1,
+        "PBQ: Threat Actor Motivations": 1,
+        "PBQ: Disaster Recovery Site Readiness": 1,
+        "PBQ: RAID Levels": 1
+      },
+      "streaks": {
+        "VPN Types": 0,
+        "Chain of Custody": 0,
+        "Network Taps": 0,
+        "UTM Firewalls": 0,
+        "Taps vs Port Mirroring": 0,
+        "DR Site Types": 0,
+        "HSM vs TPM vs Secure Enclave": 0,
+        "Out-of-Band Management": 0,
+        "Device Lifecycle Planning": 0,
+        "DR Exercise Types": 0,
+        "SSRF": 0,
+        "Wireless Threats": 0,
+        "Data Retention Policy": 0,
+        "Anomalous Behavior Monitoring": 0,
+        "Cloud Shared Responsibility (PaaS)": 0,
+        "Vulnerability Scanning": 0,
+        "Port Scanning Risk": 1,
+        "IPS Response": 0,
+        "Data Roles - Owner": 0,
+        "Automation - Escalation Scripting": 0,
+        "VM Escape": 0,
+        "Mobile Device Threat Vectors": 0,
+        "DKIM Email Verification": 0,
+        "Insecure Protocols": 0,
+        "OCSP Stapling": 1,
+        "Conflict of Interest": 0,
+        "Data Sovereignty": 0,
+        "Wireless 802.1X Certificate Issue": 0,
+        "802.1X Authentication Backend": 0,
+        "TPM Functions": 0,
+        "Email Authentication (SPF/DKIM/DMARC)": 0,
+        "SSD Sanitization": 0,
+        "Load Balancer VIP": 0,
+        "DNSSEC": 0,
+        "Governance Models": 0,
+        "Zero Trust": 0,
+        "MOU Agreement": 0,
+        "UEFI Boot Attestation": 0,
+        "Role-Based Security Training": 0,
+        "Policy Document Structure": 0,
+        "Risk Acceptance": 0,
+        "Injection-Resistant Environments": 0,
+        "Unvalidated Redirects": 0,
+        "Shadow IT": 0,
+        "Penetration Testing Tools": 0,
+        "VM Sprawl": 0,
+        "Audit Types": 0,
+        "Cloud Service Models": 0,
+        "Input Validation (Allow Lists)": 0,
+        "Certificate Types (DV)": 1,
+        "Threat Actor Motivation": 0,
+        "AAA Authentication": 0,
+        "Embedded Systems": 0,
+        "Vulnerability Scan False Positives": 0,
+        "Tokenization": 0,
+        "MFA Factors": 0,
+        "Third-Party Supply Chain Risk": 0,
+        "Data Roles - Processor": 0,
+        "Cloud Backup Methods": 0,
+        "Responsibility Matrix": 0,
+        "LDAP for Authentication": 0,
+        "SOW Agreement": 0,
+        "Zero Trust Control Plane": 0,
+        "Forward Proxy": 0,
+        "Wireless MAC Filtering Bypass": 0,
+        "Blockchain Ledger": 0,
+        "Air Gap Isolation": 0,
+        "CIA Triad": 0,
+        "Non-repudiation": 0,
+        "Authentication Factors": 0,
+        "Gap Analysis": 0,
+        "Physical Security Controls": 0,
+        "Deception Technology": 0,
+        "Change Management Process": 0,
+        "Allow Lists and Deny Lists": 0,
+        "PKI Fundamentals": 0,
+        "Symmetric vs Asymmetric Encryption": 0,
+        "Hashing and Salting": 0,
+        "Data States": 0,
+        "Data Classification Levels": 1,
+        "Security Control Types (Functional)": 0,
+        "Security Control Categories": 0,
+        "RAID and Redundancy": 0,
+        "High Availability Concepts": 0,
+        "Backup Types": 0,
+        "Power Resiliency": 0,
+        "Threat Actor Attributes": 0,
+        "Threat Actor Motivations": 0,
+        "Message-Based Social Engineering": 0,
+        "Business Email Compromise": 0,
+        "Watering Hole Attack": 0,
+        "Typosquatting": 0,
+        "Tailgating and Piggybacking": 0,
+        "Shoulder Surfing and Dumpster Diving": 0,
+        "Ransomware": 0,
+        "Trojan vs Worm": 1,
+        "Keylogger and Spyware": 0,
+        "Rootkit": 0,
+        "Logic Bomb": 0,
+        "Brute Force Attacks": 0,
+        "DDoS Amplification": 0,
+        "Credential Replay Attacks": 0,
+        "Buffer Overflow": 0,
+        "Privilege Escalation": 1,
+        "Directory Traversal": 0,
+        "API Attacks and Resource Exhaustion": 1,
+        "Downgrade Attacks": 0,
+        "Birthday and Collision Attacks": 0,
+        "Rainbow Table Attacks": 0,
+        "Password Spraying": 0,
+        "Impossible Travel Indicator": 1,
+        "Hardening Techniques": 0,
+        "Cloud Deployment Models": 0,
+        "Infrastructure as Code": 0,
+        "Microservices Architecture": 0,
+        "Software-Defined Networking": 0,
+        "Screened Subnet (DMZ)": 0,
+        "Jump Server": 0,
+        "IDS vs IPS Placement": 0,
+        "SASE and SD-WAN": 0,
+        "Network Access Control (NAC)": 0,
+        "Attack Surface and Security Zones": 0,
+        "Recovery Metrics (RTO/RPO/MTTR/MTBF)": 0,
+        "IoT and ICS/SCADA Security": 0,
+        "Fail-Open vs Fail-Closed Design": 0,
+        "Platform Diversity and Multi-Cloud": 0,
+        "Geographic Dispersion": 0,
+        "Engineering Tradeoffs in Control Selection": 2,
+        "Continuity of Operations Planning": 0,
+        "Secure Baselines": 0,
+        "Hardening Mobile Devices": 0,
+        "Sandboxing": 0,
+        "Asset Management Lifecycle": 0,
+        "SAST and DAST": 0,
+        "CVSS and CVE Scoring": 0,
+        "SIEM and Log Aggregation": 2,
+        "Data Loss Prevention": 0,
+        "EDR and XDR": 0,
+        "SOAR Automation": 0,
+        "File Integrity Monitoring": 0,
+        "Identity Federation and SSO": 0,
+        "Access Control Models": 1,
+        "Privileged Access Management": 1,
+        "Password Policy Best Practices": 0,
+        "Passwordless Authentication": 0,
+        "Incident Response Process": 0,
+        "Root Cause Analysis": 0,
+        "Threat Hunting": 0,
+        "Order of Volatility": 0,
+        "Legal Hold": 0,
+        "Web and DNS Filtering": 0,
+        "Policy Types": 0,
+        "Standards, Procedures, and Guidelines": 0,
+        "External Governance Considerations": 0,
+        "Risk Identification and Assessment": 0,
+        "Quantitative Risk Analysis": 0,
+        "Qualitative vs Quantitative Risk Analysis": 0,
+        "Risk Appetite and Risk Tolerance": 1,
+        "Risk Management Strategies": 0,
+        "Business Impact Analysis": 1,
+        "Third-Party Vendor Assessment": 0,
+        "Agreement Types (MOA and NDA)": 0,
+        "Compliance Reporting and Consequences": 0,
+        "Privacy and Data Subject Rights": 0,
+        "Penetration Testing Types": 0,
+        "Security Awareness Practices": 0,
+        "NTFS": 0,
+        "EFS": 0,
+        "WPA": 0,
+        "MD5": 0,
+        "NAT": 0,
+        "PSK": 0,
+        "SHA": 0,
+        "Data Protection Officer": 0,
+        "WTLS": 0,
+        "PEAP": 0,
+        "LEAP": 0,
+        "PBQ: Common Ports": 0,
+        "PBQ: Cryptographic Concepts": 0,
+        "PBQ: Access Control Models": 0,
+        "PBQ: Backup Types": 1,
+        "PBQ: Threat Actor Motivations": 0,
+        "PBQ: Disaster Recovery Site Readiness": 0,
+        "PBQ: RAID Levels": 0
+      },
+      "topicStats": {
+        "VPN Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "Chain of Custody": {
+          "correct": 0,
+          "total": 0
+        },
+        "Network Taps": {
+          "correct": 0,
+          "total": 0
+        },
+        "UTM Firewalls": {
+          "correct": 0,
+          "total": 0
+        },
+        "Taps vs Port Mirroring": {
+          "correct": 0,
+          "total": 0
+        },
+        "DR Site Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "HSM vs TPM vs Secure Enclave": {
+          "correct": 0,
+          "total": 0
+        },
+        "Out-of-Band Management": {
+          "correct": 0,
+          "total": 0
+        },
+        "Device Lifecycle Planning": {
+          "correct": 0,
+          "total": 0
+        },
+        "DR Exercise Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "SSRF": {
+          "correct": 0,
+          "total": 0
+        },
+        "Wireless Threats": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data Retention Policy": {
+          "correct": 0,
+          "total": 0
+        },
+        "Anomalous Behavior Monitoring": {
+          "correct": 0,
+          "total": 0
+        },
+        "Cloud Shared Responsibility (PaaS)": {
+          "correct": 0,
+          "total": 0
+        },
+        "Vulnerability Scanning": {
+          "correct": 0,
+          "total": 0
+        },
+        "Port Scanning Risk": {
+          "correct": 1,
+          "total": 1
+        },
+        "IPS Response": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data Roles - Owner": {
+          "correct": 0,
+          "total": 0
+        },
+        "Automation - Escalation Scripting": {
+          "correct": 0,
+          "total": 0
+        },
+        "VM Escape": {
+          "correct": 0,
+          "total": 0
+        },
+        "Mobile Device Threat Vectors": {
+          "correct": 0,
+          "total": 0
+        },
+        "DKIM Email Verification": {
+          "correct": 2,
+          "total": 3
+        },
+        "Insecure Protocols": {
+          "correct": 0,
+          "total": 0
+        },
+        "OCSP Stapling": {
+          "correct": 1,
+          "total": 1
+        },
+        "Conflict of Interest": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data Sovereignty": {
+          "correct": 0,
+          "total": 0
+        },
+        "Wireless 802.1X Certificate Issue": {
+          "correct": 0,
+          "total": 0
+        },
+        "802.1X Authentication Backend": {
+          "correct": 0,
+          "total": 0
+        },
+        "TPM Functions": {
+          "correct": 0,
+          "total": 0
+        },
+        "Email Authentication (SPF/DKIM/DMARC)": {
+          "correct": 0,
+          "total": 0
+        },
+        "SSD Sanitization": {
+          "correct": 0,
+          "total": 0
+        },
+        "Load Balancer VIP": {
+          "correct": 0,
+          "total": 0
+        },
+        "DNSSEC": {
+          "correct": 0,
+          "total": 0
+        },
+        "Governance Models": {
+          "correct": 0,
+          "total": 0
+        },
+        "Zero Trust": {
+          "correct": 0,
+          "total": 0
+        },
+        "MOU Agreement": {
+          "correct": 0,
+          "total": 0
+        },
+        "UEFI Boot Attestation": {
+          "correct": 0,
+          "total": 0
+        },
+        "Role-Based Security Training": {
+          "correct": 0,
+          "total": 0
+        },
+        "Policy Document Structure": {
+          "correct": 0,
+          "total": 0
+        },
+        "Risk Acceptance": {
+          "correct": 0,
+          "total": 0
+        },
+        "Injection-Resistant Environments": {
+          "correct": 0,
+          "total": 0
+        },
+        "Unvalidated Redirects": {
+          "correct": 0,
+          "total": 0
+        },
+        "Shadow IT": {
+          "correct": 0,
+          "total": 0
+        },
+        "Penetration Testing Tools": {
+          "correct": 0,
+          "total": 0
+        },
+        "VM Sprawl": {
+          "correct": 0,
+          "total": 0
+        },
+        "Audit Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "Cloud Service Models": {
+          "correct": 0,
+          "total": 0
+        },
+        "Input Validation (Allow Lists)": {
+          "correct": 0,
+          "total": 0
+        },
+        "Certificate Types (DV)": {
+          "correct": 1,
+          "total": 1
+        },
+        "Threat Actor Motivation": {
+          "correct": 0,
+          "total": 0
+        },
+        "AAA Authentication": {
+          "correct": 0,
+          "total": 0
+        },
+        "Embedded Systems": {
+          "correct": 0,
+          "total": 0
+        },
+        "Vulnerability Scan False Positives": {
+          "correct": 0,
+          "total": 0
+        },
+        "Tokenization": {
+          "correct": 0,
+          "total": 0
+        },
+        "MFA Factors": {
+          "correct": 0,
+          "total": 0
+        },
+        "Third-Party Supply Chain Risk": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data Roles - Processor": {
+          "correct": 0,
+          "total": 0
+        },
+        "Cloud Backup Methods": {
+          "correct": 0,
+          "total": 0
+        },
+        "Responsibility Matrix": {
+          "correct": 0,
+          "total": 0
+        },
+        "LDAP for Authentication": {
+          "correct": 0,
+          "total": 0
+        },
+        "SOW Agreement": {
+          "correct": 0,
+          "total": 0
+        },
+        "Zero Trust Control Plane": {
+          "correct": 0,
+          "total": 0
+        },
+        "Forward Proxy": {
+          "correct": 0,
+          "total": 0
+        },
+        "Wireless MAC Filtering Bypass": {
+          "correct": 0,
+          "total": 0
+        },
+        "Blockchain Ledger": {
+          "correct": 0,
+          "total": 0
+        },
+        "Air Gap Isolation": {
+          "correct": 0,
+          "total": 0
+        },
+        "CIA Triad": {
+          "correct": 0,
+          "total": 0
+        },
+        "Non-repudiation": {
+          "correct": 0,
+          "total": 0
+        },
+        "Authentication Factors": {
+          "correct": 0,
+          "total": 0
+        },
+        "Gap Analysis": {
+          "correct": 0,
+          "total": 0
+        },
+        "Physical Security Controls": {
+          "correct": 0,
+          "total": 0
+        },
+        "Deception Technology": {
+          "correct": 0,
+          "total": 0
+        },
+        "Change Management Process": {
+          "correct": 0,
+          "total": 0
+        },
+        "Allow Lists and Deny Lists": {
+          "correct": 0,
+          "total": 0
+        },
+        "PKI Fundamentals": {
+          "correct": 0,
+          "total": 0
+        },
+        "Symmetric vs Asymmetric Encryption": {
+          "correct": 0,
+          "total": 0
+        },
+        "Hashing and Salting": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data States": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data Classification Levels": {
+          "correct": 1,
+          "total": 1
+        },
+        "Security Control Types (Functional)": {
+          "correct": 0,
+          "total": 0
+        },
+        "Security Control Categories": {
+          "correct": 0,
+          "total": 0
+        },
+        "RAID and Redundancy": {
+          "correct": 0,
+          "total": 0
+        },
+        "High Availability Concepts": {
+          "correct": 0,
+          "total": 0
+        },
+        "Backup Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "Power Resiliency": {
+          "correct": 0,
+          "total": 0
+        },
+        "Threat Actor Attributes": {
+          "correct": 0,
+          "total": 0
+        },
+        "Threat Actor Motivations": {
+          "correct": 0,
+          "total": 0
+        },
+        "Message-Based Social Engineering": {
+          "correct": 0,
+          "total": 0
+        },
+        "Business Email Compromise": {
+          "correct": 0,
+          "total": 0
+        },
+        "Watering Hole Attack": {
+          "correct": 0,
+          "total": 0
+        },
+        "Typosquatting": {
+          "correct": 0,
+          "total": 0
+        },
+        "Tailgating and Piggybacking": {
+          "correct": 0,
+          "total": 0
+        },
+        "Shoulder Surfing and Dumpster Diving": {
+          "correct": 0,
+          "total": 0
+        },
+        "Ransomware": {
+          "correct": 0,
+          "total": 0
+        },
+        "Trojan vs Worm": {
+          "correct": 1,
+          "total": 1
+        },
+        "Keylogger and Spyware": {
+          "correct": 0,
+          "total": 0
+        },
+        "Rootkit": {
+          "correct": 0,
+          "total": 0
+        },
+        "Logic Bomb": {
+          "correct": 0,
+          "total": 0
+        },
+        "Brute Force Attacks": {
+          "correct": 0,
+          "total": 0
+        },
+        "DDoS Amplification": {
+          "correct": 0,
+          "total": 0
+        },
+        "Credential Replay Attacks": {
+          "correct": 0,
+          "total": 0
+        },
+        "Buffer Overflow": {
+          "correct": 0,
+          "total": 0
+        },
+        "Privilege Escalation": {
+          "correct": 1,
+          "total": 1
+        },
+        "Directory Traversal": {
+          "correct": 0,
+          "total": 0
+        },
+        "API Attacks and Resource Exhaustion": {
+          "correct": 1,
+          "total": 1
+        },
+        "Downgrade Attacks": {
+          "correct": 0,
+          "total": 0
+        },
+        "Birthday and Collision Attacks": {
+          "correct": 0,
+          "total": 0
+        },
+        "Rainbow Table Attacks": {
+          "correct": 0,
+          "total": 0
+        },
+        "Password Spraying": {
+          "correct": 0,
+          "total": 0
+        },
+        "Impossible Travel Indicator": {
+          "correct": 1,
+          "total": 1
+        },
+        "Hardening Techniques": {
+          "correct": 0,
+          "total": 0
+        },
+        "Cloud Deployment Models": {
+          "correct": 0,
+          "total": 0
+        },
+        "Infrastructure as Code": {
+          "correct": 0,
+          "total": 0
+        },
+        "Microservices Architecture": {
+          "correct": 0,
+          "total": 0
+        },
+        "Software-Defined Networking": {
+          "correct": 0,
+          "total": 0
+        },
+        "Screened Subnet (DMZ)": {
+          "correct": 0,
+          "total": 0
+        },
+        "Jump Server": {
+          "correct": 0,
+          "total": 0
+        },
+        "IDS vs IPS Placement": {
+          "correct": 0,
+          "total": 0
+        },
+        "SASE and SD-WAN": {
+          "correct": 0,
+          "total": 0
+        },
+        "Network Access Control (NAC)": {
+          "correct": 0,
+          "total": 0
+        },
+        "Attack Surface and Security Zones": {
+          "correct": 0,
+          "total": 0
+        },
+        "Recovery Metrics (RTO/RPO/MTTR/MTBF)": {
+          "correct": 0,
+          "total": 0
+        },
+        "IoT and ICS/SCADA Security": {
+          "correct": 0,
+          "total": 0
+        },
+        "Fail-Open vs Fail-Closed Design": {
+          "correct": 0,
+          "total": 0
+        },
+        "Platform Diversity and Multi-Cloud": {
+          "correct": 0,
+          "total": 0
+        },
+        "Geographic Dispersion": {
+          "correct": 0,
+          "total": 0
+        },
+        "Engineering Tradeoffs in Control Selection": {
+          "correct": 2,
+          "total": 2
+        },
+        "Continuity of Operations Planning": {
+          "correct": 0,
+          "total": 0
+        },
+        "Secure Baselines": {
+          "correct": 0,
+          "total": 0
+        },
+        "Hardening Mobile Devices": {
+          "correct": 0,
+          "total": 0
+        },
+        "Sandboxing": {
+          "correct": 0,
+          "total": 0
+        },
+        "Asset Management Lifecycle": {
+          "correct": 0,
+          "total": 0
+        },
+        "SAST and DAST": {
+          "correct": 0,
+          "total": 0
+        },
+        "CVSS and CVE Scoring": {
+          "correct": 0,
+          "total": 0
+        },
+        "SIEM and Log Aggregation": {
+          "correct": 2,
+          "total": 2
+        },
+        "Data Loss Prevention": {
+          "correct": 0,
+          "total": 0
+        },
+        "EDR and XDR": {
+          "correct": 0,
+          "total": 0
+        },
+        "SOAR Automation": {
+          "correct": 0,
+          "total": 0
+        },
+        "File Integrity Monitoring": {
+          "correct": 0,
+          "total": 0
+        },
+        "Identity Federation and SSO": {
+          "correct": 0,
+          "total": 0
+        },
+        "Access Control Models": {
+          "correct": 1,
+          "total": 1
+        },
+        "Privileged Access Management": {
+          "correct": 1,
+          "total": 1
+        },
+        "Password Policy Best Practices": {
+          "correct": 0,
+          "total": 0
+        },
+        "Passwordless Authentication": {
+          "correct": 0,
+          "total": 0
+        },
+        "Incident Response Process": {
+          "correct": 0,
+          "total": 0
+        },
+        "Root Cause Analysis": {
+          "correct": 0,
+          "total": 0
+        },
+        "Threat Hunting": {
+          "correct": 0,
+          "total": 0
+        },
+        "Order of Volatility": {
+          "correct": 0,
+          "total": 0
+        },
+        "Legal Hold": {
+          "correct": 0,
+          "total": 0
+        },
+        "Web and DNS Filtering": {
+          "correct": 0,
+          "total": 0
+        },
+        "Policy Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "Standards, Procedures, and Guidelines": {
+          "correct": 0,
+          "total": 0
+        },
+        "External Governance Considerations": {
+          "correct": 0,
+          "total": 0
+        },
+        "Risk Identification and Assessment": {
+          "correct": 0,
+          "total": 0
+        },
+        "Quantitative Risk Analysis": {
+          "correct": 0,
+          "total": 1
+        },
+        "Qualitative vs Quantitative Risk Analysis": {
+          "correct": 0,
+          "total": 0
+        },
+        "Risk Appetite and Risk Tolerance": {
+          "correct": 1,
+          "total": 1
+        },
+        "Risk Management Strategies": {
+          "correct": 0,
+          "total": 0
+        },
+        "Business Impact Analysis": {
+          "correct": 1,
+          "total": 1
+        },
+        "Third-Party Vendor Assessment": {
+          "correct": 0,
+          "total": 0
+        },
+        "Agreement Types (MOA and NDA)": {
+          "correct": 0,
+          "total": 0
+        },
+        "Compliance Reporting and Consequences": {
+          "correct": 0,
+          "total": 0
+        },
+        "Privacy and Data Subject Rights": {
+          "correct": 0,
+          "total": 0
+        },
+        "Penetration Testing Types": {
+          "correct": 0,
+          "total": 0
+        },
+        "Security Awareness Practices": {
+          "correct": 0,
+          "total": 0
+        },
+        "NTFS": {
+          "correct": 0,
+          "total": 0
+        },
+        "EFS": {
+          "correct": 0,
+          "total": 0
+        },
+        "WPA": {
+          "correct": 0,
+          "total": 0
+        },
+        "MD5": {
+          "correct": 0,
+          "total": 0
+        },
+        "NAT": {
+          "correct": 0,
+          "total": 0
+        },
+        "PSK": {
+          "correct": 0,
+          "total": 0
+        },
+        "SHA": {
+          "correct": 0,
+          "total": 0
+        },
+        "Data Protection Officer": {
+          "correct": 0,
+          "total": 0
+        },
+        "WTLS": {
+          "correct": 0,
+          "total": 0
+        },
+        "PEAP": {
+          "correct": 0,
+          "total": 0
+        },
+        "LEAP": {
+          "correct": 0,
+          "total": 0
+        },
+        "PBQ: Common Ports": {
+          "correct": 0,
+          "total": 0
+        },
+        "PBQ: Cryptographic Concepts": {
+          "correct": 0,
+          "total": 0
+        },
+        "PBQ: Access Control Models": {
+          "correct": 0,
+          "total": 0
+        },
+        "PBQ: Backup Types": {
+          "correct": 1,
+          "total": 1
+        },
+        "PBQ: Threat Actor Motivations": {
+          "correct": 0,
+          "total": 0
+        },
+        "PBQ: Disaster Recovery Site Readiness": {
+          "correct": 0,
+          "total": 0
+        },
+        "PBQ: RAID Levels": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "domainStats": {
+        "3.0 Security Architecture": {
+          "correct": 6,
+          "total": 7
+        },
+        "4.0 Security Operations": {
+          "correct": 4,
+          "total": 4
+        },
+        "5.0 Security Program Management": {
+          "correct": 2,
+          "total": 3
+        },
+        "2.0 Threats, Vulnerabilities & Mitigations": {
+          "correct": 5,
+          "total": 5
+        },
+        "1.0 General Security Concepts": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "answerHistory": [
+        {
+          "topic": "API Attacks and Resource Exhaustion",
+          "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+          "correct": true
+        },
+        {
+          "topic": "Trojan vs Worm",
+          "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+          "correct": true
+        },
+        {
+          "topic": "OCSP Stapling",
+          "domain": "3.0 Security Architecture",
+          "correct": true
+        },
+        {
+          "topic": "DKIM Email Verification",
+          "domain": "3.0 Security Architecture",
+          "correct": true
+        },
+        {
+          "topic": "Privilege Escalation",
+          "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+          "correct": true
+        },
+        {
+          "topic": "DKIM Email Verification",
+          "domain": "3.0 Security Architecture",
+          "correct": true
+        },
+        {
+          "topic": "Port Scanning Risk",
+          "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+          "correct": true
+        },
+        {
+          "topic": "Engineering Tradeoffs in Control Selection",
+          "domain": "3.0 Security Architecture",
+          "correct": true
+        },
+        {
+          "topic": "Business Impact Analysis",
+          "domain": "5.0 Security Program Management",
+          "correct": true
+        },
+        {
+          "topic": "Certificate Types (DV)",
+          "domain": "3.0 Security Architecture",
+          "correct": true
+        },
+        {
+          "topic": "Data Classification Levels",
+          "domain": "1.0 General Security Concepts",
+          "correct": true
+        },
+        {
+          "topic": "Risk Appetite and Risk Tolerance",
+          "domain": "5.0 Security Program Management",
+          "correct": true
+        },
+        {
+          "topic": "Access Control Models",
+          "domain": "4.0 Security Operations",
+          "correct": true
+        },
+        {
+          "topic": "DKIM Email Verification",
+          "domain": "3.0 Security Architecture",
+          "correct": false
+        },
+        {
+          "topic": "SIEM and Log Aggregation",
+          "domain": "4.0 Security Operations",
+          "correct": true
+        },
+        {
+          "topic": "Privileged Access Management",
+          "domain": "4.0 Security Operations",
+          "correct": true
+        },
+        {
+          "topic": "Impossible Travel Indicator",
+          "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+          "correct": true
+        },
+        {
+          "topic": "Quantitative Risk Analysis",
+          "domain": "5.0 Security Program Management",
+          "correct": false
+        },
+        {
+          "topic": "SIEM and Log Aggregation",
+          "domain": "4.0 Security Operations",
+          "correct": true
+        },
+        {
+          "topic": "PBQ: Backup Types",
+          "domain": "1.0 General Security Concepts",
+          "correct": true
+        },
+        {
+          "topic": "Engineering Tradeoffs in Control Selection",
+          "domain": "3.0 Security Architecture",
+          "correct": true
+        }
+      ],
+      "questionCount": 21,
+      "correctCount": 19,
+      "currentStreak": 3,
+      "lastQuestionId": "engineering_tradeoffs_in_control_selection_1",
+      "lastPbqId": "pbq_backup_1",
+      "updatedAt": "2026-07-03T23:18:35.357Z"
+    }
+  }
+}
