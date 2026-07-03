@@ -1,0 +1,17 @@
+{
+  "name": "security-plus-adaptive-quiz",
+  "version": "1.0.0",
+  "description": "Adaptive Security+ SY0-701 practice quiz with login, saved progress, and performance-based (drag-and-drop) questions.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

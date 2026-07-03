@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <h1>Security+ Adaptive Quiz</h1>
+    <div id="userBar" class="user-bar hidden">
+      <span id="userLabel"></span>
+      <button id="logoutBtn" class="secondary small">Log out</button>
+    </div>
+  </div>
+  <div class="subtitle">SY0-701 domain coverage &middot; adapts to what you get wrong &middot; performance-based questions every 20 &middot; readiness report every 10</div>
+
+  <!-- AUTH SCREEN -->
+  <div id="authScreen" class="card">
+    <div class="tabs">
+      <button id="tabLogin" class="tab active">Log in</button>
+      <button id="tabRegister" class="tab">Create account</button>
+    </div>
+
+    <form id="loginForm" class="auth-form">
+      <label>Username
+        <input type="text" id="loginUsername" autocomplete="username" required>
+      </label>
+      <label>Password
+        <input type="password" id="loginPassword" autocomplete="current-password" required>
+      </label>
+      <div id="loginError" class="error-text hidden"></div>
+      <button type="submit">Log in</button>
+    </form>
+
+    <form id="registerForm" class="auth-form hidden">
+      <label>Choose a username
+        <input type="text" id="regUsername" autocomplete="username" required>
+      </label>
+      <label>Choose a password (6+ characters)
+        <input type="password" id="regPassword" autocomplete="new-password" required>
+      </label>
+      <div id="registerError" class="error-text hidden"></div>
+      <button type="submit">Create account</button>
+    </form>
+  </div>
+
+  <!-- APP SCREEN -->
+  <div id="appScreen" class="hidden">
+    <div id="statbar" class="statbar hidden">
+      <div class="stat"><span class="label">Question</span><span class="value" id="stat-qnum">0</span></div>
+      <div class="stat"><span class="label">Correct</span><span class="value" id="stat-correct">0</span></div>
+      <div class="stat"><span class="label">Accuracy</span><span class="value" id="stat-acc">--</span></div>
+      <div class="stat"><span class="label">Streak</span><span class="value" id="stat-streak">0</span></div>
+    </div>
+
+    <div id="start" class="card startscreen">
+      <p id="startMsg"><strong>How this works:</strong> Missing a question makes that topic show up more often until you answer it correctly a couple times in a row. Every 20th question is a performance-based (drag-and-drop) item. Every 10th question gives you a readiness report. Your progress saves to your account automatically.</p>
+      <ul id="startFacts"></ul>
+      <button id="startBtn">Start / Resume Quiz</button>
+    </div>
+
+    <div id="quizArea" class="hidden"></div>
+    <div id="reportArea" class="hidden"></div>
+  </div>
+
+  <div class="footer-note">One answer key discrepancy from the original source material was corrected: the "threat actor motivated by direct financial gain" question scores Organized Crime as correct (not Hacktivist), per CompTIA SY0-701 objectives.</div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
