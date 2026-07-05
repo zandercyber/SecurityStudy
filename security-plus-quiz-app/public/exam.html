@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Simulation — Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav id="sidebar" class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <div class="page-header">
+        <h1>Exam Simulation</h1>
+        <p class="page-subtitle">Timed, randomly-ordered, no mid-quiz feedback — closest thing here to the real exam.</p>
+      </div>
+
+      <div id="examBar" class="exam-bar hidden">
+        <div class="exam-bar-left">
+          <span class="exam-label">EXAM</span>
+          <span id="examProgress">Question 1 of 90</span>
+        </div>
+        <div class="exam-bar-right">
+          <span id="examTimerDisplay" class="exam-timer-display">90:00</span>
+          <button id="exitExamBtn" class="secondary small">Exit Exam</button>
+        </div>
+      </div>
+
+      <div id="start" class="card startscreen">
+        <div class="exam-config">
+          <div class="exam-config-row">
+            <label class="config-label">Questions
+              <input type="number" id="examQCount" value="90" min="10" max="354" class="config-input">
+            </label>
+            <label class="config-label">Time (minutes)
+              <input type="number" id="examMinutes" value="90" min="5" max="240" class="config-input">
+            </label>
+          </div>
+          <p class="config-note">No feedback shown during the exam. Full results with domain breakdown shown at the end.</p>
+        </div>
+        <button id="startBtn">Start Exam</button>
+
+        <div id="pastExamsWrap"></div>
+      </div>
+
+      <div id="quizArea" class="hidden"></div>
+      <div id="reportArea" class="hidden"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/state.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/exam.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Missed — Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav id="sidebar" class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <div class="page-header">
+        <h1>Review Missed</h1>
+        <p class="page-subtitle">Works through every question you've answered incorrectly, using the same adaptive weighting. Getting one right removes it from this queue.</p>
+      </div>
+
+      <div id="statbar" class="statbar hidden">
+        <div class="stat"><span class="label">Question</span><span class="value" id="stat-qnum">0</span></div>
+        <div class="stat"><span class="label">Correct</span><span class="value" id="stat-correct">0</span></div>
+        <div class="stat"><span class="label">Accuracy</span><span class="value" id="stat-acc">--</span></div>
+        <div class="stat"><span class="label">Streak</span><span class="value" id="stat-streak">0</span></div>
+      </div>
+
+      <div id="modeIndicator" class="mode-indicator hidden"></div>
+
+      <div id="start" class="card startscreen">
+        <p id="reviewIntro">Loading your missed-question queue&hellip;</p>
+        <button id="startBtn">Start Review</button>
+      </div>
+
+      <div id="quizArea" class="hidden"></div>
+      <div id="reportArea" class="hidden"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/state.js"></script>
+<script src="js/pbq.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/review.js"></script>
+</body>
+</html>

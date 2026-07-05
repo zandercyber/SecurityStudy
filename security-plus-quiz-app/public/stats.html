@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stats — Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav id="sidebar" class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <div class="page-header">
+        <h1>Stats</h1>
+        <p class="page-subtitle">Accuracy trend, per-domain breakdown, weakest topics, and exam history.</p>
+      </div>
+
+      <div id="statsContent"></div>
+
+      <div class="card danger-zone">
+        <p style="color:var(--muted); font-size:0.88rem; margin-top:0;">Wipe all saved progress — adaptive weights, accuracy history, missed-question queue, and exam history. This cannot be undone.</p>
+        <button id="resetBtn" class="secondary small danger-btn">Reset all progress&hellip;</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/state.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/stats.js"></script>
+</body>
+</html>

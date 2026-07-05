@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Focus Mode — Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav id="sidebar" class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <div class="page-header">
+        <h1>Focus Mode</h1>
+        <p class="page-subtitle">Pick one or more SY0-701 domains and practice only those topics — same adaptive weighting, narrower pool.</p>
+      </div>
+
+      <div id="statbar" class="statbar hidden">
+        <div class="stat"><span class="label">Question</span><span class="value" id="stat-qnum">0</span></div>
+        <div class="stat"><span class="label">Correct</span><span class="value" id="stat-correct">0</span></div>
+        <div class="stat"><span class="label">Accuracy</span><span class="value" id="stat-acc">--</span></div>
+        <div class="stat"><span class="label">Streak</span><span class="value" id="stat-streak">0</span></div>
+      </div>
+
+      <div id="modeIndicator" class="mode-indicator hidden"></div>
+
+      <div id="start" class="card startscreen">
+        <p>Select the domains you want to drill. Leave nothing checked to use all domains.</p>
+        <div id="domainCheckboxes" class="domain-checkboxes"></div>
+        <button id="startBtn">Start Focused Practice</button>
+      </div>
+
+      <div id="quizArea" class="hidden"></div>
+      <div id="reportArea" class="hidden"></div>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/state.js"></script>
+<script src="js/pbq.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/focus.js"></script>
+</body>
+</html>
