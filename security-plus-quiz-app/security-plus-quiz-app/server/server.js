@@ -61,6 +61,15 @@ app.post('/api/progress', auth.authMiddleware, (req, res) => {
   }
 });
 
+app.delete('/api/progress', auth.authMiddleware, (req, res) => {
+  try {
+    progressStore.resetProgress(req.username);
+    res.json({ ok: true });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Security+ Adaptive Quiz running at http://localhost:${PORT}`);
 });

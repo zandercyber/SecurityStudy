@@ -12,4 +12,10 @@ function setProgress(username, progress) {
   save(db);
 }
 
-module.exports = { getProgress, setProgress };
+function resetProgress(username) {
+  const db = load();
+  db.progress[username] = null;
+  save(db);
+}
+
+module.exports = { getProgress, setProgress, resetProgress };

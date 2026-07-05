@@ -56,10 +56,58 @@
       <div class="stat"><span class="label">Streak</span><span class="value" id="stat-streak">0</span></div>
     </div>
 
+    <!-- Exam timer bar (shown only during exam) -->
+    <div id="examBar" class="exam-bar hidden">
+      <div class="exam-bar-left">
+        <span class="exam-label">EXAM</span>
+        <span id="examProgress">Question 1 of 90</span>
+      </div>
+      <div class="exam-bar-right">
+        <span id="examTimerDisplay" class="exam-timer-display">90:00</span>
+        <button id="exitExamBtn" class="secondary small">Exit Exam</button>
+      </div>
+    </div>
+
+    <!-- Active mode indicator (review / focus) -->
+    <div id="modeIndicator" class="mode-indicator hidden"></div>
+
+    <!-- START SCREEN -->
     <div id="start" class="card startscreen">
       <p id="startMsg"><strong>How this works:</strong> Missing a question makes that topic show up more often until you answer it correctly a couple times in a row. Every 20th question is a performance-based (drag-and-drop) item. Every 10th question gives you a readiness report. Your progress saves to your account automatically.</p>
       <ul id="startFacts"></ul>
-      <button id="startBtn">Start / Resume Quiz</button>
+
+      <!-- Mode selector -->
+      <div class="mode-row">
+        <button id="modePracticeBtn" class="mode-btn active">Practice</button>
+        <button id="modeReviewBtn" class="mode-btn">Review Missed (<span id="missedCount">0</span>)</button>
+        <button id="modeExamBtn" class="mode-btn">Exam Simulation</button>
+      </div>
+
+      <!-- Exam config (hidden unless exam mode selected) -->
+      <div id="examConfig" class="exam-config hidden">
+        <div class="exam-config-row">
+          <label class="config-label">Questions
+            <input type="number" id="examQCount" value="90" min="10" max="354" class="config-input">
+          </label>
+          <label class="config-label">Time (minutes)
+            <input type="number" id="examMinutes" value="90" min="5" max="240" class="config-input">
+          </label>
+        </div>
+        <p class="config-note">No feedback shown during exam. Results with domain breakdown shown at the end.</p>
+      </div>
+
+      <!-- Focus domain selector -->
+      <details id="focusPanel" class="focus-panel">
+        <summary id="focusSummary" class="focus-summary">Focus on specific domains (optional)</summary>
+        <div id="domainCheckboxes" class="domain-checkboxes"></div>
+        <button id="clearFocusBtn" class="secondary small" style="margin-top:8px;">Clear selection (all domains)</button>
+      </details>
+
+      <button id="startBtn">Start / Resume Practice</button>
+
+      <div class="danger-zone">
+        <button id="resetBtn" class="secondary small danger-btn">Reset all progress&hellip;</button>
+      </div>
     </div>
 
     <div id="quizArea" class="hidden"></div>
