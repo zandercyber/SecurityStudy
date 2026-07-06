@@ -2,6 +2,7 @@
 
 var REGULAR_QUESTIONS = [];
 var PBQ_QUESTIONS = [];
+var FLASHCARDS = [];
 
 // ---- Core quiz state (persisted to server) ----
 var weights = {};
@@ -20,6 +21,9 @@ var shuffleMap = null;
 var slotAssignments = {};
 var selectedTerm = null;
 
+// ---- Flashcard self-assessment (persisted to server, separate from adaptive quiz scoring) ----
+var flashcardStats = {}; // { [cardId]: { gotIt, stillLearning } }
+
 var missedQuestionIds = []; // IDs of questions ever answered wrong in practice/focus/review
 var accuracyTrend = [];     // [{n, acc}] rolling accuracy snapshots, capped to ~200 points
 var examHistory = [];       // [{date, score, total, pct, domainBreakdown}]
@@ -33,6 +37,12 @@ function loadQuestions() {
   return api('/api/questions').then(function(data) {
     REGULAR_QUESTIONS = data.regular || [];
     PBQ_QUESTIONS = data.pbq || [];
+  });
+}
+
+function loadFlashcards() {
+  return api('/api/flashcards').then(function(data) {
+    FLASHCARDS = data || [];
   });
 }
 
@@ -51,6 +61,7 @@ function initFreshState() {
   missedQuestionIds = [];
   accuracyTrend = [];
   examHistory = [];
+  flashcardStats = {};
 
   REGULAR_QUESTIONS.concat(PBQ_QUESTIONS).forEach(function(q) {
     if (!(q.topic in weights)) {
@@ -78,6 +89,7 @@ function restoreState(saved) {
   missedQuestionIds = saved.missedQuestionIds || [];
   accuracyTrend = saved.accuracyTrend || [];
   examHistory = saved.examHistory || [];
+  flashcardStats = saved.flashcardStats || {};
 }
 
 function snapshotState() {
@@ -94,7 +106,8 @@ function snapshotState() {
     lastPbqId: lastPbqId,
     missedQuestionIds: missedQuestionIds,
     accuracyTrend: accuracyTrend,
-    examHistory: examHistory
+    examHistory: examHistory,
+    flashcardStats: flashcardStats
   };
 }
 

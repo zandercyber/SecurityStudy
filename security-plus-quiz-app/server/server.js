@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 const QUESTIONS_PATH = path.join(__dirname, '..', 'data', 'questions.json');
+const FLASHCARDS_PATH = path.join(__dirname, '..', 'data', 'flashcards.json');
 
 app.get('/api/questions', (req, res) => {
   try {
@@ -18,6 +19,15 @@ app.get('/api/questions', (req, res) => {
     res.json(data);
   } catch (e) {
     res.status(500).json({ error: 'Could not load question bank.' });
+  }
+});
+
+app.get('/api/flashcards', (req, res) => {
+  try {
+    const data = JSON.parse(fs.readFileSync(FLASHCARDS_PATH, 'utf8'));
+    res.json(data);
+  } catch (e) {
+    res.status(500).json({ error: 'Could not load flashcards.' });
   }
 });
 

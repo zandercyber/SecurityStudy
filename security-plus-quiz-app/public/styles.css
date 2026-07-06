@@ -402,6 +402,52 @@ ul.weak li { margin-bottom: 4px; }
 
 .kbd-hint { color: var(--muted); font-size: 0.75rem; margin-top: 10px; line-height: 1.4; }
 
+/* ---------------- Flashcards ---------------- */
+
+.flashcard-deck-controls { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+.flashcard-toggles { display: flex; gap: 18px; flex-wrap: wrap; }
+.flashcard-toggle { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--muted); cursor: pointer; }
+.flashcard-toggle input { accent-color: var(--accent); cursor: pointer; }
+
+.flashcard-stage { display: flex; flex-direction: column; align-items: center; padding: 6px 0 4px; }
+.flashcard-counter { font-family: var(--font-mono); color: var(--muted); font-size: 0.8rem; margin-bottom: 14px; letter-spacing: .04em; }
+
+.flashcard {
+  width: 100%; max-width: 460px; height: 260px;
+  perspective: 1200px; cursor: pointer; margin-bottom: 14px;
+}
+.flashcard-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.45s cubic-bezier(.4,.2,.2,1);
+  transform-style: preserve-3d;
+}
+.flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+.flashcard-face {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  background: var(--panel); border: 1px solid var(--border); border-radius: 16px;
+  padding: 28px; line-height: 1.5;
+}
+.flashcard-front {
+  font-family: var(--font-mono); font-size: 2rem; font-weight: 700; color: var(--accent);
+  letter-spacing: .02em;
+}
+.flashcard-back {
+  transform: rotateY(180deg); color: var(--text); font-size: 1.05rem;
+}
+.flashcard:focus { outline: none; }
+.flashcard:focus .flashcard-face { border-color: var(--accent); }
+
+.flashcard-hint { color: var(--muted); font-size: 0.78rem; margin-bottom: 6px; text-align: center; }
+.flashcard-progress-note { color: var(--muted); font-size: 0.78rem; text-align: center; margin-bottom: 4px; }
+
+.flashcard-nav-row { display: flex; justify-content: center; gap: 12px; margin-top: 8px; }
+.flashcard-mark-row { display: flex; justify-content: center; gap: 12px; margin-top: 14px; }
+.mark-btn-gotit { background: var(--good); color: #06231a; }
+.mark-btn-gotit:hover { background: #2ec090; }
+.mark-btn-stilllearning { background: var(--warn); color: #2b1706; }
+.mark-btn-stilllearning:hover { background: #cf8535; }
+
 /* ---------------- Misc ---------------- */
 
 .empty-state { color: var(--muted); font-size: 0.92rem; line-height: 1.6; text-align: center; padding: 24px 12px; }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards — Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav id="sidebar" class="sidebar"></nav>
+
+  <main class="main-content">
+    <div class="content-wrap">
+      <div class="page-header">
+        <h1>Flashcards</h1>
+        <p class="page-subtitle">Quick recall drills for key terms and acronyms — flip, self-assess, and restack toward what you're still learning.</p>
+      </div>
+
+      <div class="card">
+        <div class="flashcard-deck-controls">
+          <div class="flashcard-toggles">
+            <label class="flashcard-toggle">
+              <input type="checkbox" id="shuffleToggle"> Shuffle deck
+            </label>
+            <label class="flashcard-toggle">
+              <input type="checkbox" id="stillLearningToggle"> Still learning only
+            </label>
+          </div>
+        </div>
+
+        <div class="flashcard-stage">
+          <div id="flashcardArea"></div>
+
+          <div class="flashcard-nav-row">
+            <button id="prevBtn" class="secondary">&larr; Previous</button>
+            <button id="nextBtn" class="secondary">Next &rarr;</button>
+          </div>
+
+          <div id="markButtons" class="flashcard-mark-row hidden">
+            <button id="gotItBtn" class="mark-btn-gotit">Got it (1)</button>
+            <button id="stillLearningBtn" class="mark-btn-stilllearning">Still learning (2)</button>
+          </div>
+
+          <div class="kbd-hint">Keyboard: Space to flip &middot; &larr;/&rarr; to move &middot; 1/2 to mark once flipped</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/state.js"></script>
+<script src="js/flashcards.js"></script>
+</body>
+</html>

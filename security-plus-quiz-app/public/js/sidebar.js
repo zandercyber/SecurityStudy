@@ -5,6 +5,7 @@ var SIDEBAR_LINKS = [
   ['index.html', 'home', 'Home'],
   ['practice.html', 'practice', 'Practice'],
   ['focus.html', 'focus', 'Focus Mode'],
+  ['flashcards.html', 'flashcards', 'Flashcards'],
   ['review.html', 'review', 'Review Missed'],
   ['exam.html', 'exam', 'Exam Simulation'],
   ['stats.html', 'stats', 'Stats']
