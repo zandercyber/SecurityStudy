@@ -5618,6 +5618,1956 @@
       ],
       "correct": 0,
       "exp": "SaaS delivers a complete, ready-to-use application; the provider manages the infrastructure, platform, and the application itself."
+    },
+    {
+      "id": "elliptic_curve_cryptography_1",
+      "topic": "Elliptic Curve Cryptography",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A mobile app needs strong asymmetric encryption but has limited processing power and battery life. Which type of cryptography provides equivalent security to RSA with much smaller key sizes and less computational overhead?",
+      "choices": [
+        "Elliptic Curve Cryptography (ECC)",
+        "MD5 hashing",
+        "AES-256",
+        "Steganography"
+      ],
+      "correct": 0,
+      "exp": "ECC provides strong security with much smaller keys than RSA, making it well-suited for resource-constrained devices like mobile phones and IoT sensors."
+    },
+    {
+      "id": "elliptic_curve_cryptography_2",
+      "topic": "Elliptic Curve Cryptography",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Why might a security architect choose ECC over RSA for a fleet of battery-powered IoT sensors?",
+      "choices": [
+        "ECC achieves comparable security with smaller keys, reducing computation and power use",
+        "ECC is a symmetric algorithm and therefore faster",
+        "ECC does not require any key generation",
+        "RSA cannot be used for digital signatures"
+      ],
+      "correct": 0,
+      "exp": "Smaller key sizes for equivalent security mean less CPU work and power draw, which matters a lot on constrained devices."
+    },
+    {
+      "id": "perfect_forward_secrecy_1",
+      "topic": "Perfect Forward Secrecy",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A company wants to ensure that if its server's private key is ever compromised in the future, past recorded TLS sessions still cannot be decrypted. What property should its TLS configuration provide?",
+      "choices": [
+        "Perfect forward secrecy",
+        "Key escrow",
+        "Certificate pinning",
+        "Non-repudiation"
+      ],
+      "correct": 0,
+      "exp": "Perfect forward secrecy uses ephemeral session keys (via algorithms like Diffie-Hellman Ephemeral) so that compromising the long-term private key later doesn't expose previously captured traffic."
+    },
+    {
+      "id": "perfect_forward_secrecy_2",
+      "topic": "Perfect Forward Secrecy",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Which key exchange approach is required to achieve perfect forward secrecy in a TLS connection?",
+      "choices": [
+        "An ephemeral (temporary, session-unique) key exchange, such as DHE or ECDHE",
+        "Reusing the same static RSA key pair for every session",
+        "Disabling encryption for the handshake only",
+        "Using a single pre-shared key for all sessions"
+      ],
+      "correct": 0,
+      "exp": "Ephemeral key exchange generates a new session key each time, so no single compromised key can decrypt multiple sessions -- past or future."
+    },
+    {
+      "id": "steganography_1",
+      "topic": "Steganography",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "An insider hides a confidential spreadsheet's data by embedding it inside the pixel data of an ordinary-looking image file, which is then emailed out without raising suspicion. What technique was used?",
+      "choices": [
+        "Steganography",
+        "Tokenization",
+        "Masking",
+        "Salting"
+      ],
+      "correct": 0,
+      "exp": "Steganography hides the existence of data within another file (image, audio, etc.) rather than just making it unreadable, so it can bypass filters looking for obviously sensitive content."
+    },
+    {
+      "id": "steganography_2",
+      "topic": "Steganography",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "How does steganography differ fundamentally from encryption as a data protection technique?",
+      "choices": [
+        "Steganography conceals the existence of the data itself, while encryption makes data unreadable without hiding that it exists",
+        "Steganography and encryption are identical techniques with different names",
+        "Steganography only works on text files",
+        "Encryption cannot be detected while steganography always can"
+      ],
+      "correct": 0,
+      "exp": "Encryption scrambles data but an observer can still see encrypted data exists; steganography tries to hide the fact that any hidden data is present at all."
+    },
+    {
+      "id": "certificate_chain_of_trust_1",
+      "topic": "Certificate Chain of Trust",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A browser trusts a website's certificate because that certificate was signed by an intermediate CA, which was itself signed by a root CA already trusted by the operating system. What is this sequence of validation called?",
+      "choices": [
+        "The chain of trust",
+        "Certificate pinning",
+        "OCSP stapling",
+        "Key escrow"
+      ],
+      "correct": 0,
+      "exp": "The chain of trust links a certificate back through intermediate CAs to a trusted root CA, allowing the browser to validate authenticity without directly knowing every site's certificate."
+    },
+    {
+      "id": "certificate_chain_of_trust_2",
+      "topic": "Certificate Chain of Trust",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Why do certificate authorities commonly use an intermediate CA to sign end-entity (website) certificates instead of signing directly with the root CA?",
+      "choices": [
+        "It keeps the highly sensitive root CA key offline and protected, limiting exposure if an intermediate is ever compromised",
+        "It makes certificates cheaper to issue",
+        "It removes the need for a chain of trust entirely",
+        "Root CAs are not capable of signing certificates directly"
+      ],
+      "correct": 0,
+      "exp": "Keeping the root CA offline and using intermediates for day-to-day signing limits the damage if an intermediate is compromised -- it can be revoked without invalidating the root."
+    },
+    {
+      "id": "certificate_pinning_1",
+      "topic": "Certificate Pinning",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A mobile banking app is hardcoded to only accept one specific certificate (or public key) for its API server, rejecting connections even if a different, otherwise valid, trusted certificate is presented. What technique is this?",
+      "choices": [
+        "Certificate pinning",
+        "OCSP stapling",
+        "Certificate transparency",
+        "Key escrow"
+      ],
+      "correct": 0,
+      "exp": "Certificate pinning hardcodes the expected certificate/public key in the client, protecting against attacks using a fraudulently issued but technically valid certificate from a different CA."
+    },
+    {
+      "id": "certificate_pinning_2",
+      "topic": "Certificate Pinning",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "What attack does certificate pinning specifically help defend a mobile app against?",
+      "choices": [
+        "An on-path attacker presenting a fraudulently obtained but chain-of-trust-valid certificate for the same domain",
+        "SQL injection against the app's backend database",
+        "Malware installed directly on the user's device",
+        "Physical theft of the device"
+      ],
+      "correct": 0,
+      "exp": "Pinning prevents the app from accepting any certificate other than the one it expects, even if an attacker somehow obtains a validly-signed certificate for that domain from a different CA."
+    },
+    {
+      "id": "hsm_vs_cloud_kms_1",
+      "topic": "HSM vs Cloud KMS",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A company wants the strong isolation of a hardware security module for its encryption keys but doesn't want to purchase, rack, and maintain physical HSM appliances. What cloud offering provides this?",
+      "choices": [
+        "A cloud Key Management Service (KMS) backed by HSMs",
+        "A CASB",
+        "A SIEM",
+        "A WAF"
+      ],
+      "correct": 0,
+      "exp": "Cloud KMS offerings let organizations manage keys with HSM-backed protection without owning the physical hardware, billed as a managed service."
+    },
+    {
+      "id": "hsm_vs_cloud_kms_2",
+      "topic": "HSM vs Cloud KMS",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "What is a key tradeoff to consider when moving from an on-premises HSM to a cloud provider's KMS?",
+      "choices": [
+        "You are trusting the cloud provider's operational and access controls around your keys, rather than controlling the hardware directly",
+        "Cloud KMS cannot encrypt or decrypt any data",
+        "On-premises HSMs are always cheaper at any scale",
+        "Cloud KMS eliminates the need for any access control policies"
+      ],
+      "correct": 0,
+      "exp": "Using a managed KMS means trusting the provider's security and operational practices for key protection, a meaningful shift in control compared to owning physical HSM hardware."
+    },
+    {
+      "id": "homomorphic_encryption_1",
+      "topic": "Homomorphic Encryption",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A healthcare analytics company wants a cloud provider to run computations on patient data without ever being able to see the underlying unencrypted values, even during processing. What emerging cryptographic technique enables computing directly on encrypted data?",
+      "choices": [
+        "Homomorphic encryption",
+        "Tokenization",
+        "Salting",
+        "Key stretching"
+      ],
+      "correct": 0,
+      "exp": "Homomorphic encryption allows mathematical operations to be performed directly on ciphertext, producing an encrypted result that, when decrypted, matches the result of the same operations on the plaintext -- without ever exposing the plaintext to the processor."
+    },
+    {
+      "id": "homomorphic_encryption_2",
+      "topic": "Homomorphic Encryption",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "What is the primary security advantage of using homomorphic encryption when outsourcing data processing to an untrusted third party?",
+      "choices": [
+        "The third party can compute on the data without ever needing to decrypt or view the underlying plaintext",
+        "It makes processing faster than working with plaintext data",
+        "It eliminates the need for any access controls on the third party's systems",
+        "It replaces the need for TLS during data transmission"
+      ],
+      "correct": 0,
+      "exp": "Because computation happens directly on ciphertext, the processing party never has access to the sensitive plaintext, significantly reducing exposure risk."
+    },
+    {
+      "id": "version_control_in_change_management_1",
+      "topic": "Version Control in Change Management",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Before rolling out a firewall rule change, the security team stores the exact previous configuration in a versioned repository so it can be restored instantly if the change causes problems. What practice supports this kind of reliable backout capability?",
+      "choices": [
+        "Version control of configurations",
+        "Data classification",
+        "Steganography",
+        "Key escrow"
+      ],
+      "correct": 0,
+      "exp": "Version-controlling configuration changes gives change management a reliable, exact record to roll back to, supporting the backout plan requirement of a formal change process."
+    },
+    {
+      "id": "version_control_in_change_management_2",
+      "topic": "Version Control in Change Management",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "How does version control directly support the change management process's backout plan requirement?",
+      "choices": [
+        "It preserves an exact historical record of prior configurations that can be restored quickly if a change fails",
+        "It automatically approves all changes without review",
+        "It prevents any changes from ever being made",
+        "It replaces the need for a change advisory board"
+      ],
+      "correct": 0,
+      "exp": "Having a precise, retrievable history of past configurations is what makes a fast, reliable rollback possible when a change doesn't go as planned."
+    },
+    {
+      "id": "cross-site_scripting_(xss)_1",
+      "topic": "Cross-Site Scripting (XSS)",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker submits a comment on a blog containing a malicious script tag. When other visitors view the page, the script executes in their browsers, stealing their session cookies. What type of attack is this?",
+      "choices": [
+        "Cross-site scripting (XSS)",
+        "SSRF",
+        "Directory traversal",
+        "Buffer overflow"
+      ],
+      "correct": 0,
+      "exp": "XSS injects malicious script into a web page viewed by other users, executing in their browser context and often used to steal session cookies or hijack sessions."
+    },
+    {
+      "id": "cross-site_scripting_(xss)_2",
+      "topic": "Cross-Site Scripting (XSS)",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which mitigation is most effective at preventing stored cross-site scripting attacks on a web application?",
+      "choices": [
+        "Properly encoding/escaping user-supplied output before rendering it in HTML",
+        "Disabling HTTPS on the login page",
+        "Increasing the session timeout duration",
+        "Allowing all JavaScript from any domain to run"
+      ],
+      "correct": 0,
+      "exp": "Output encoding ensures user-supplied content is rendered as inert text/data rather than executable script, directly preventing XSS."
+    },
+    {
+      "id": "command_injection_1",
+      "topic": "Command Injection",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A web form that runs a system ping command using unsanitized user input allows an attacker to append '; rm -rf /' to the input field, causing the underlying OS to execute the extra command. What type of attack is this?",
+      "choices": [
+        "Command injection",
+        "SQL injection",
+        "XML injection",
+        "LDAP injection"
+      ],
+      "correct": 0,
+      "exp": "Command injection occurs when unsanitized user input is passed directly to an OS shell/command interpreter, allowing arbitrary command execution."
+    },
+    {
+      "id": "command_injection_2",
+      "topic": "Command Injection",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which practice most directly prevents command injection vulnerabilities in an application that must call OS-level utilities?",
+      "choices": [
+        "Avoiding direct OS shell calls with user input, or strictly validating/escaping input against an allow list",
+        "Increasing the application's log verbosity",
+        "Disabling HTTPS",
+        "Extending session timeout"
+      ],
+      "correct": 0,
+      "exp": "Avoiding shell invocation with untrusted input (or rigorously validating/escaping it) closes off the ability for an attacker to append extra commands."
+    },
+    {
+      "id": "race_condition_(toctou)_attacks_1",
+      "topic": "Race Condition (TOCTOU) Attacks",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A file permission check occurs, and then, before the file is actually used, an attacker swaps it for a malicious file in the brief window between the check and the use. What class of vulnerability is this?",
+      "choices": [
+        "Time-of-check to time-of-use (TOCTOU) race condition",
+        "Buffer overflow",
+        "Directory traversal",
+        "SSRF"
+      ],
+      "correct": 0,
+      "exp": "TOCTOU race conditions exploit the gap between when a condition is checked and when it's acted upon, letting an attacker change the state in between."
+    },
+    {
+      "id": "race_condition_(toctou)_attacks_2",
+      "topic": "Race Condition (TOCTOU) Attacks",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which general software design approach best mitigates time-of-check to time-of-use vulnerabilities?",
+      "choices": [
+        "Performing the check and the action atomically (as a single, uninterruptible operation) rather than as two separate steps",
+        "Increasing application logging",
+        "Disabling multi-threading entirely in all cases",
+        "Using longer session timeouts"
+      ],
+      "correct": 0,
+      "exp": "Making check-then-act sequences atomic removes the window of opportunity an attacker needs to interfere between the two steps."
+    },
+    {
+      "id": "fileless_malware_1",
+      "topic": "Fileless Malware",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker compromises a system and executes malicious code entirely in memory using legitimate tools like PowerShell, never writing an executable file to disk, making traditional signature-based antivirus far less effective. What type of malware is this?",
+      "choices": [
+        "Fileless malware",
+        "A rootkit",
+        "A logic bomb",
+        "Ransomware"
+      ],
+      "correct": 0,
+      "exp": "Fileless malware operates in memory using legitimate system tools (living off the land), leaving little to no trace on disk for traditional file-scanning antivirus to detect."
+    },
+    {
+      "id": "fileless_malware_2",
+      "topic": "Fileless Malware",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Why is fileless malware particularly difficult for traditional signature-based antivirus to detect?",
+      "choices": [
+        "It resides in memory and abuses legitimate system tools rather than writing a distinct malicious file to disk",
+        "It only targets air-gapped networks",
+        "It requires physical access to install",
+        "It cannot execute any code at all"
+      ],
+      "correct": 0,
+      "exp": "Without a malicious file on disk to scan and fingerprint, traditional signature-based detection has little to work with -- behavioral/EDR-based detection is far more effective against it."
+    },
+    {
+      "id": "dll_injection_1",
+      "topic": "DLL Injection",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker forces a legitimate running process to load and execute a malicious dynamic-link library, allowing the malicious code to run under the identity and permissions of the trusted process. What technique is this?",
+      "choices": [
+        "DLL injection",
+        "SSRF",
+        "Directory traversal",
+        "Password spraying"
+      ],
+      "correct": 0,
+      "exp": "DLL injection loads malicious code into the address space of a legitimate process, letting the attacker's code run with that process's permissions and blend in with legitimate activity."
+    },
+    {
+      "id": "dll_injection_2",
+      "topic": "DLL Injection",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Why do attackers use DLL injection into a trusted, already-running process rather than launching their own standalone malicious executable?",
+      "choices": [
+        "It lets malicious code inherit the trusted process's permissions and blend in, evading detection tools that trust that process",
+        "It is the only way to execute any code on Windows",
+        "It requires no privileges at all to perform",
+        "It automatically encrypts all network traffic"
+      ],
+      "correct": 0,
+      "exp": "Running inside a trusted process's context helps malicious activity evade security tools that whitelist or trust that legitimate process."
+    },
+    {
+      "id": "insider_threats_1",
+      "topic": "Insider Threats",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A frustrated employee with legitimate access to the customer database quietly exports the entire table to a personal USB drive before resigning. What category of threat does this represent?",
+      "choices": [
+        "Insider threat",
+        "Nation-state actor",
+        "Hacktivist",
+        "Shadow IT"
+      ],
+      "correct": 0,
+      "exp": "An insider threat comes from someone with legitimate authorized access -- an employee, contractor, or partner -- misusing that access, whether intentionally or accidentally."
+    },
+    {
+      "id": "insider_threats_2",
+      "topic": "Insider Threats",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which control is most directly useful for detecting an insider quietly exfiltrating unusually large volumes of sensitive data they have legitimate access to?",
+      "choices": [
+        "User and entity behavior analytics (UEBA) monitoring for anomalous data access/export patterns",
+        "A public-facing WAF",
+        "An air-gapped network",
+        "A password complexity policy"
+      ],
+      "correct": 0,
+      "exp": "Because the access itself is authorized, signature-based tools won't flag it -- behavioral analytics that detect deviations from a user's normal pattern are what catches this kind of insider activity."
+    },
+    {
+      "id": "supply_chain_attack_vectors_1",
+      "topic": "Supply Chain Attack Vectors",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Attackers compromise a widely used software vendor's build pipeline and insert malicious code into a legitimate software update, which is then automatically installed by thousands of the vendor's customers. What type of attack is this?",
+      "choices": [
+        "A supply chain attack",
+        "A watering hole attack",
+        "A DDoS attack",
+        "An on-path attack"
+      ],
+      "correct": 0,
+      "exp": "Supply chain attacks compromise a trusted upstream vendor or component, letting attackers reach many downstream victims through a single trusted distribution channel."
+    },
+    {
+      "id": "supply_chain_attack_vectors_2",
+      "topic": "Supply Chain Attack Vectors",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Why are software supply chain attacks particularly dangerous compared to attacking a single organization directly?",
+      "choices": [
+        "Compromising one trusted vendor can provide access to every one of that vendor's downstream customers simultaneously",
+        "They require no technical skill to execute",
+        "They only affect open-source software",
+        "They are always detected immediately by antivirus"
+      ],
+      "correct": 0,
+      "exp": "A single successful supply chain compromise can cascade to a huge number of victims who all trusted the same upstream source, multiplying the attack's impact."
+    },
+    {
+      "id": "bluejacking_and_bluesnarfing_1",
+      "topic": "Bluejacking and Bluesnarfing",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker sends unsolicited messages to nearby Bluetooth-enabled devices, without gaining access to any data on them. What is this activity called?",
+      "choices": [
+        "Bluejacking",
+        "Bluesnarfing",
+        "Bluetooth pairing",
+        "Evil twin"
+      ],
+      "correct": 0,
+      "exp": "Bluejacking is sending unsolicited messages/data to Bluetooth devices; it's a nuisance but doesn't involve unauthorized data access."
+    },
+    {
+      "id": "bluejacking_and_bluesnarfing_2",
+      "topic": "Bluejacking and Bluesnarfing",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker exploits a Bluetooth vulnerability to access and copy a victim's contacts and messages without their knowledge. What is this attack called?",
+      "choices": [
+        "Bluesnarfing",
+        "Bluejacking",
+        "Warflying",
+        "Typosquatting"
+      ],
+      "correct": 0,
+      "exp": "Bluesnarfing involves unauthorized access to data (contacts, messages, files) on a Bluetooth device, unlike the merely annoying bluejacking."
+    },
+    {
+      "id": "wireless_deauthentication_attack_1",
+      "topic": "Wireless Deauthentication Attack",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker floods a wireless access point area with spoofed deauthentication frames, forcibly disconnecting legitimate clients so they will reconnect to a malicious rogue access point instead. What type of attack is this?",
+      "choices": [
+        "A deauthentication attack",
+        "A downgrade attack",
+        "A rainbow table attack",
+        "A birthday attack"
+      ],
+      "correct": 0,
+      "exp": "Deauthentication attacks abuse unauthenticated 802.11 management frames to forcibly disconnect clients, often as a precursor to an evil-twin or credential-capture attack."
+    },
+    {
+      "id": "wireless_deauthentication_attack_2",
+      "topic": "Wireless Deauthentication Attack",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "What is a common follow-up goal after an attacker successfully deauthenticates wireless clients from a legitimate access point?",
+      "choices": [
+        "Getting the disconnected clients to reconnect to an attacker-controlled rogue/evil-twin access point",
+        "Encrypting the victim's hard drive",
+        "Sending spam email from the victim's account",
+        "Performing a SQL injection against a database"
+      ],
+      "correct": 0,
+      "exp": "Forcing a disconnect is often used to push victims toward reconnecting to a malicious access point that can capture credentials or traffic."
+    },
+    {
+      "id": "wep_weaknesses_1",
+      "topic": "WEP Weaknesses",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A legacy wireless network still uses an encryption protocol with a small, statically reused initialization vector, which security researchers demonstrated could be cracked within minutes using freely available tools. What protocol is this?",
+      "choices": [
+        "WEP (Wired Equivalent Privacy)",
+        "WPA3",
+        "PEAP",
+        "EAP-TLS"
+      ],
+      "correct": 0,
+      "exp": "WEP's small, reused initialization vectors and weak RC4 implementation make it trivially crackable with modern tools -- it should never be used today."
+    },
+    {
+      "id": "wep_weaknesses_2",
+      "topic": "WEP Weaknesses",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "What was the fundamental cryptographic flaw that made WEP practically insecure?",
+      "choices": [
+        "Its small, frequently reused initialization vectors led to predictable keystreams that could be statistically analyzed and cracked",
+        "It used no encryption at all",
+        "It required a certificate authority for every connection",
+        "It only worked over wired connections"
+      ],
+      "correct": 0,
+      "exp": "WEP's short, reused IVs created patterns in the keystream that attackers could exploit to recover the key relatively quickly."
+    },
+    {
+      "id": "rfid_and_nfc_risks_1",
+      "topic": "RFID and NFC Risks",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker uses a portable reader to covertly scan and clone the data from an employee's RFID access badge while standing near them in a crowded elevator. What risk does this illustrate?",
+      "choices": [
+        "Unauthorized RFID skimming/cloning",
+        "SSRF",
+        "Rainbow table attack",
+        "Directory traversal"
+      ],
+      "correct": 0,
+      "exp": "RFID/NFC signals can potentially be read and cloned by nearby unauthorized readers if not properly protected (e.g., with shielding or encryption), a real risk for proximity access badges and contactless payment cards."
+    },
+    {
+      "id": "rfid_and_nfc_risks_2",
+      "topic": "RFID and NFC Risks",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which mitigation directly helps protect an RFID-enabled access badge from being read by an unauthorized nearby scanner?",
+      "choices": [
+        "Using an RFID-blocking sleeve/wallet and encrypted badge technology",
+        "Disabling the badge reader at the front door",
+        "Increasing the badge's Wi-Fi signal strength",
+        "Using a longer PIN on the badge"
+      ],
+      "correct": 0,
+      "exp": "RFID-blocking materials physically prevent unauthorized scanning at a distance, and encrypted badge protocols prevent simple cloning even if signals are intercepted."
+    },
+    {
+      "id": "credential_stuffing_1",
+      "topic": "Credential Stuffing",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker takes a large list of usernames and passwords leaked from a breach at one company and automatically tries them against a completely different company's login page, relying on users reusing the same password across sites. What attack is this?",
+      "choices": [
+        "Credential stuffing",
+        "Password spraying",
+        "Rainbow table attack",
+        "Downgrade attack"
+      ],
+      "correct": 0,
+      "exp": "Credential stuffing reuses known, previously breached username/password pairs against other sites, exploiting password reuse rather than guessing new passwords."
+    },
+    {
+      "id": "credential_stuffing_2",
+      "topic": "Credential Stuffing",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which control is most effective at reducing the success rate of credential stuffing attacks against a login portal?",
+      "choices": [
+        "Requiring multi-factor authentication in addition to password login",
+        "Removing account lockout policies",
+        "Allowing unlimited login attempts",
+        "Using shorter, simpler password requirements"
+      ],
+      "correct": 0,
+      "exp": "Even if a correct username/password pair is stuffed successfully, MFA blocks the attacker without the second factor -- directly neutralizing the core risk of reused credentials."
+    },
+    {
+      "id": "pass-the-hash_attacks_1",
+      "topic": "Pass-the-Hash Attacks",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker who has compromised a Windows machine extracts a cached password hash and uses it directly to authenticate to other systems on the network, without ever needing to crack the hash into plaintext. What attack is this?",
+      "choices": [
+        "Pass-the-hash attack",
+        "Rainbow table attack",
+        "Downgrade attack",
+        "Birthday attack"
+      ],
+      "correct": 0,
+      "exp": "Pass-the-hash exploits authentication protocols that accept the hash itself as proof of identity, letting an attacker authenticate without ever knowing the actual plaintext password."
+    },
+    {
+      "id": "pass-the-hash_attacks_2",
+      "topic": "Pass-the-Hash Attacks",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which practice helps limit the impact of a successful pass-the-hash attack within a Windows domain environment?",
+      "choices": [
+        "Restricting and limiting the reuse of privileged local administrator credentials across multiple machines",
+        "Using a shorter password history policy",
+        "Disabling all logging",
+        "Allowing the same local admin password on every machine for consistency"
+      ],
+      "correct": 0,
+      "exp": "Unique local admin credentials per machine (and limiting privileged account reuse) prevent a single stolen hash from providing access to many systems at once."
+    },
+    {
+      "id": "arp_poisoning_1",
+      "topic": "ARP Poisoning",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker on a local network sends forged ARP replies, associating their own MAC address with the IP address of the default gateway, causing other devices to unknowingly route their traffic through the attacker's machine. What attack is this?",
+      "choices": [
+        "ARP poisoning (ARP spoofing)",
+        "DNS poisoning",
+        "DHCP spoofing",
+        "SSRF"
+      ],
+      "correct": 0,
+      "exp": "ARP poisoning corrupts the local ARP cache of victims, redirecting traffic intended for a legitimate device (like the gateway) through the attacker's machine -- a common setup for an on-path attack."
+    },
+    {
+      "id": "arp_poisoning_2",
+      "topic": "ARP Poisoning",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Which switch feature helps detect and prevent ARP poisoning attacks on a local network?",
+      "choices": [
+        "Dynamic ARP Inspection (DAI)",
+        "DNSSEC",
+        "OCSP stapling",
+        "WPA3"
+      ],
+      "correct": 0,
+      "exp": "Dynamic ARP Inspection validates ARP packets against trusted bindings (often built from DHCP snooping data), dropping forged ARP replies before they can poison client caches."
+    },
+    {
+      "id": "casb_(cloud_access_security_broker)_1",
+      "topic": "CASB (Cloud Access Security Broker)",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company wants a single control point that enforces consistent security policy (encryption, access control, DLP) across all the SaaS applications its employees use, regardless of which cloud vendor hosts them. What type of tool provides this?",
+      "choices": [
+        "A CASB (Cloud Access Security Broker)",
+        "A WAF",
+        "A jump server",
+        "An HSM"
+      ],
+      "correct": 0,
+      "exp": "A CASB sits between users and cloud services, enforcing consistent security policy, visibility, and DLP across multiple SaaS/cloud applications from one control point."
+    },
+    {
+      "id": "casb_(cloud_access_security_broker)_2",
+      "topic": "CASB (Cloud Access Security Broker)",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Which capability is most specifically associated with a CASB, as opposed to a traditional on-premises firewall?",
+      "choices": [
+        "Enforcing consistent security policy and visibility across multiple third-party cloud/SaaS applications",
+        "Blocking traffic based on IP address at the network perimeter only",
+        "Encrypting a single on-premises database",
+        "Managing physical access to a data center"
+      ],
+      "correct": 0,
+      "exp": "CASBs are specifically built to extend visibility and policy enforcement into cloud/SaaS usage that a traditional perimeter firewall can't see."
+    },
+    {
+      "id": "container_security_1",
+      "topic": "Container Security",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company runs dozens of application containers on shared hosts and wants to ensure that a compromised container cannot access another container's resources or the underlying host. What security concept addresses this?",
+      "choices": [
+        "Container isolation/segmentation",
+        "VM sprawl",
+        "Air gapping",
+        "Load balancing"
+      ],
+      "correct": 0,
+      "exp": "Proper container isolation (namespaces, resource limits, minimal privileges) prevents a compromised container from affecting other containers or the host itself."
+    },
+    {
+      "id": "container_security_2",
+      "topic": "Container Security",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Which practice reduces the attack surface of a container image before it's ever deployed?",
+      "choices": [
+        "Using minimal base images and scanning them for known vulnerabilities before deployment",
+        "Running every container as root by default",
+        "Disabling all image scanning to speed up deployment",
+        "Sharing the host's kernel privileges freely with every container"
+      ],
+      "correct": 0,
+      "exp": "Minimal, scanned base images reduce the number of packages/libraries (and therefore vulnerabilities) shipped inside a container."
+    },
+    {
+      "id": "serverless_security_considerations_1",
+      "topic": "Serverless Security Considerations",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company runs its application as a set of independent functions triggered by events, with the cloud provider fully managing the underlying servers. What is a key security responsibility that still falls on the company in this serverless (FaaS) model?",
+      "choices": [
+        "Securing the function's code, dependencies, and permissions (least privilege) for each function",
+        "Patching the physical server hardware",
+        "Managing the hypervisor",
+        "Physically securing the data center"
+      ],
+      "correct": 0,
+      "exp": "Even though the provider manages the underlying infrastructure in a serverless model, the customer is still responsible for the function code itself, its dependencies, and the permissions each function is granted."
+    },
+    {
+      "id": "serverless_security_considerations_2",
+      "topic": "Serverless Security Considerations",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Why is over-permissioned function-level access a particular concern in serverless architectures?",
+      "choices": [
+        "Each function often runs with its own execution role, and an overly broad role increases the impact if that specific function is compromised",
+        "Serverless functions cannot be assigned individual permissions",
+        "Serverless architectures do not support access control at all",
+        "Functions always share one global administrator account by design"
+      ],
+      "correct": 0,
+      "exp": "Because functions typically run under individual execution roles, granting more permission than a function actually needs unnecessarily expands the blast radius if it's compromised."
+    },
+    {
+      "id": "web_application_firewall_(waf)_1",
+      "topic": "Web Application Firewall (WAF)",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company wants to inspect and filter HTTP/HTTPS traffic to its web application specifically, blocking common attack patterns like SQL injection and XSS payloads before they reach the application code. What should it deploy?",
+      "choices": [
+        "A WAF (Web Application Firewall)",
+        "A traditional network firewall",
+        "A CASB",
+        "A jump server"
+      ],
+      "correct": 0,
+      "exp": "A WAF operates at the application layer, specifically understanding and filtering HTTP traffic for attack patterns like injection and XSS, unlike a traditional network firewall that filters by IP/port."
+    },
+    {
+      "id": "web_application_firewall_(waf)_2",
+      "topic": "Web Application Firewall (WAF)",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "How does a WAF differ from a traditional stateful network firewall?",
+      "choices": [
+        "A WAF inspects application-layer (HTTP) content for attack patterns, while a traditional firewall filters primarily on IP address and port",
+        "A WAF only blocks traffic based on MAC address",
+        "A traditional firewall can read encrypted HTTP payloads but a WAF cannot",
+        "They are functionally identical with different names"
+      ],
+      "correct": 0,
+      "exp": "WAFs specifically understand and inspect HTTP request/response content, letting them detect application-layer attacks that a traditional network-layer firewall would miss."
+    },
+    {
+      "id": "next-generation_firewall_(ngfw)_1",
+      "topic": "Next-Generation Firewall (NGFW)",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company wants a firewall that combines traditional packet filtering with application awareness, integrated intrusion prevention, and the ability to identify traffic by application (not just port), rather than deploying several separate single-purpose appliances. What should it deploy?",
+      "choices": [
+        "A next-generation firewall (NGFW)",
+        "A traditional stateless packet filter",
+        "A hub",
+        "A basic proxy server"
+      ],
+      "correct": 0,
+      "exp": "NGFWs integrate traditional firewall filtering with application awareness, intrusion prevention, and deep packet inspection into a single device."
+    },
+    {
+      "id": "next-generation_firewall_(ngfw)_2",
+      "topic": "Next-Generation Firewall (NGFW)",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "What capability distinguishes a next-generation firewall from a traditional stateful firewall?",
+      "choices": [
+        "The ability to identify and control traffic based on the specific application generating it, not just IP/port",
+        "The ability to block traffic based on destination IP only",
+        "Operating exclusively at Layer 2",
+        "Requiring manual approval for every packet"
+      ],
+      "correct": 0,
+      "exp": "Application awareness -- identifying traffic by the actual application/service generating it, even on non-standard ports -- is a hallmark NGFW capability beyond traditional port/IP filtering."
+    },
+    {
+      "id": "bastion_host_1",
+      "topic": "Bastion Host",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A cloud environment places a single, hardened, closely monitored server at the network edge that administrators must connect through before reaching any internal cloud resources. What is this server called?",
+      "choices": [
+        "A bastion host",
+        "A load balancer",
+        "A CASB",
+        "An HSM"
+      ],
+      "correct": 0,
+      "exp": "A bastion host is a hardened server intentionally exposed at the network edge to provide a single, closely monitored entry point into a more trusted internal network -- similar in purpose to a jump server."
+    },
+    {
+      "id": "bastion_host_2",
+      "topic": "Bastion Host",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "What security principle does deploying a single, hardened bastion host as the only entry point into a private cloud subnet best illustrate?",
+      "choices": [
+        "Reducing and controlling the attack surface through a single, tightly monitored point of entry",
+        "Load balancing traffic across multiple servers",
+        "Encrypting data at rest",
+        "Achieving high availability through redundancy"
+      ],
+      "correct": 0,
+      "exp": "Funneling all external access through one hardened, monitored host minimizes and centralizes the attack surface instead of exposing every internal resource directly."
+    },
+    {
+      "id": "site-to-site_vpn_1",
+      "topic": "Site-to-Site VPN",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Two corporate offices in different cities need their internal networks to communicate securely over the public internet as if they were on the same private network, without individual users needing to run VPN client software. What should be configured?",
+      "choices": [
+        "A site-to-site VPN",
+        "A remote-access (client) VPN",
+        "A split-tunnel VPN for each user",
+        "A screened subnet"
+      ],
+      "correct": 0,
+      "exp": "A site-to-site VPN creates a persistent encrypted tunnel between two networks/gateways, transparently connecting entire offices rather than individual remote users."
+    },
+    {
+      "id": "site-to-site_vpn_2",
+      "topic": "Site-to-Site VPN",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "How does a site-to-site VPN differ from a remote-access VPN?",
+      "choices": [
+        "A site-to-site VPN connects two entire networks via their gateways, while a remote-access VPN connects an individual client device to a network",
+        "A site-to-site VPN requires client software on every user's laptop",
+        "A remote-access VPN can only be used for wireless connections",
+        "They are the exact same technology"
+      ],
+      "correct": 0,
+      "exp": "Site-to-site VPNs operate gateway-to-gateway for whole networks; remote-access VPNs connect individual devices/users into a network."
+    },
+    {
+      "id": "secure_enclave_1",
+      "topic": "Secure Enclave",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A smartphone stores biometric fingerprint data and cryptographic keys in an isolated hardware region of the processor that is walled off from the main operating system, so that even if the OS is compromised, that data remains protected. What is this isolated region called?",
+      "choices": [
+        "A secure enclave",
+        "A screened subnet",
+        "An air gap",
+        "A jump server"
+      ],
+      "correct": 0,
+      "exp": "A secure enclave is an isolated, hardware-protected processing environment (like Apple's Secure Enclave) that keeps sensitive operations and data separate from the main OS, protecting them even if the OS is compromised."
+    },
+    {
+      "id": "secure_enclave_2",
+      "topic": "Secure Enclave",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "What is the primary security benefit of processing biometric authentication inside a secure enclave rather than in the main operating system?",
+      "choices": [
+        "Sensitive data and operations remain protected even if the main OS is compromised by malware",
+        "It makes biometric authentication faster than any other method",
+        "It removes the need for any authentication at all",
+        "It allows the data to be freely shared with any application"
+      ],
+      "correct": 0,
+      "exp": "The isolation of a secure enclave means a full OS-level compromise still doesn't expose the sensitive data or keys protected inside it."
+    },
+    {
+      "id": "tls_handshake_1",
+      "topic": "TLS Handshake",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "During the setup of an HTTPS connection, the client and server exchange supported cipher suites, verify the server's certificate, and establish a shared session key before any application data is sent. What process is this?",
+      "choices": [
+        "The TLS handshake",
+        "OCSP stapling",
+        "DNSSEC validation",
+        "ARP resolution"
+      ],
+      "correct": 0,
+      "exp": "The TLS handshake negotiates encryption parameters, authenticates the server (via its certificate), and establishes session keys before encrypted application data begins flowing."
+    },
+    {
+      "id": "tls_handshake_2",
+      "topic": "TLS Handshake",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "During the TLS handshake, what is the primary purpose of the server presenting its digital certificate to the client?",
+      "choices": [
+        "To let the client verify the server's identity via the certificate's chain of trust before establishing a secure session",
+        "To transmit the actual encrypted application data",
+        "To authenticate the client to the server",
+        "To replace the need for a session key entirely"
+      ],
+      "correct": 0,
+      "exp": "The certificate lets the client cryptographically verify it's actually talking to the legitimate server (via the chain of trust) before trusting it with sensitive data."
+    },
+    {
+      "id": "crl_vs_ocsp_1",
+      "topic": "CRL vs OCSP",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A browser needs to check whether a website's certificate has been revoked. Instead of downloading an entire, potentially large list of every revoked certificate from that CA, it queries a service that returns the real-time status of just that one certificate. What is this real-time query method called?",
+      "choices": [
+        "OCSP (Online Certificate Status Protocol)",
+        "A CRL (Certificate Revocation List)",
+        "DNSSEC",
+        "WPA3"
+      ],
+      "correct": 0,
+      "exp": "OCSP allows a real-time, single-certificate status check, avoiding the overhead of downloading and parsing an entire CRL just to check one certificate."
+    },
+    {
+      "id": "crl_vs_ocsp_2",
+      "topic": "CRL vs OCSP",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "What is the main drawback of using a full Certificate Revocation List (CRL) compared to OCSP for checking certificate status?",
+      "choices": [
+        "CRLs can be large and must be downloaded and parsed in full, even to check just one certificate's status",
+        "CRLs cannot list any revoked certificates",
+        "OCSP is slower than downloading a full CRL every time",
+        "CRLs provide stronger encryption than OCSP"
+      ],
+      "correct": 0,
+      "exp": "A CRL lists every revoked certificate from a CA, which can grow large; checking a single certificate still requires downloading and searching the whole list, unlike OCSP's targeted query."
+    },
+    {
+      "id": "ntp_security_1",
+      "topic": "NTP Security",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A SIEM correlates log timestamps from dozens of different servers to reconstruct the exact sequence of events during a security incident. Which protocol must be properly configured and secured across all those servers for this correlation to be reliable?",
+      "choices": [
+        "NTP (Network Time Protocol)",
+        "SNMP",
+        "DHCP",
+        "NAT"
+      ],
+      "correct": 0,
+      "exp": "Accurate, synchronized time across systems (via NTP) is essential for reliable log correlation -- without it, event timelines during an investigation can be misleading or unusable."
+    },
+    {
+      "id": "ntp_security_2",
+      "topic": "NTP Security",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Why is securing NTP itself (not just using it) a security concern for an organization?",
+      "choices": [
+        "An attacker who can manipulate time synchronization could disrupt log correlation, certificate validation, and authentication token validity",
+        "NTP has no security implications at all",
+        "NTP transmits passwords in plaintext",
+        "NTP is only used by network printers"
+      ],
+      "correct": 0,
+      "exp": "Many security mechanisms (certificate validity windows, time-based authentication tokens, log timelines) depend on accurate time -- manipulating NTP can undermine all of them."
+    },
+    {
+      "id": "wireless_site_survey_and_heat_maps_1",
+      "topic": "Wireless Site Survey and Heat Maps",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Before deploying access points throughout a new office building, a network engineer walks the space with specialized equipment to measure signal strength, interference, and coverage gaps, producing a visual map of expected wireless coverage. What is this process called?",
+      "choices": [
+        "A wireless site survey",
+        "A vulnerability scan",
+        "A penetration test",
+        "A business impact analysis"
+      ],
+      "correct": 0,
+      "exp": "A wireless site survey measures real-world RF conditions to plan access point placement for adequate coverage and minimal interference, often producing a coverage heat map."
+    },
+    {
+      "id": "wireless_site_survey_and_heat_maps_2",
+      "topic": "Wireless Site Survey and Heat Maps",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Why is a wireless site survey valuable from a security perspective, not just a performance one?",
+      "choices": [
+        "It helps identify unintended signal leakage outside the building where an attacker could intercept or access the wireless network from a parking lot or nearby space",
+        "It automatically encrypts all wireless traffic",
+        "It replaces the need for WPA3 encryption",
+        "It eliminates the need for access point authentication"
+      ],
+      "correct": 0,
+      "exp": "Understanding exactly how far wireless signal reaches helps prevent unnecessary exposure of the network to areas outside the organization's physical control."
+    },
+    {
+      "id": "patch_management_lifecycle_1",
+      "topic": "Patch Management Lifecycle",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "An organization identifies available patches, tests them in a non-production environment, schedules deployment during an approved maintenance window, and verifies successful installation afterward. What process does this describe?",
+      "choices": [
+        "The patch management lifecycle",
+        "Chain of custody",
+        "Business impact analysis",
+        "Risk transference"
+      ],
+      "correct": 0,
+      "exp": "Patch management is a structured lifecycle: identification, testing, deployment, and verification, not just blindly installing every update immediately."
+    },
+    {
+      "id": "patch_management_lifecycle_2",
+      "topic": "Patch Management Lifecycle",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Why do organizations typically test patches in a staging environment before deploying them to production systems?",
+      "choices": [
+        "To catch compatibility issues or unexpected breakage before it affects live systems",
+        "Because patches are never actually necessary in production",
+        "To avoid ever needing a backout plan",
+        "Because staging environments apply patches automatically without oversight"
+      ],
+      "correct": 0,
+      "exp": "Testing in staging first reduces the risk of a patch causing unexpected outages or conflicts in the live production environment."
+    },
+    {
+      "id": "change_control_board_1",
+      "topic": "Change Control Board",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A cross-functional group of stakeholders reviews, approves, or rejects proposed IT changes based on risk, business impact, and scheduling before they're implemented. What is this group called?",
+      "choices": [
+        "A change control board (change advisory board)",
+        "A red team",
+        "A DPO's office",
+        "A bug bounty panel"
+      ],
+      "correct": 0,
+      "exp": "A change control/advisory board formally reviews and approves significant changes, weighing risk and business impact before authorizing implementation."
+    },
+    {
+      "id": "change_control_board_2",
+      "topic": "Change Control Board",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is the main purpose of routing significant infrastructure changes through a change control board rather than letting individual engineers deploy at will?",
+      "choices": [
+        "To ensure changes are reviewed for risk, business impact, and proper scheduling before they affect production systems",
+        "To slow down all changes indefinitely regardless of risk",
+        "To eliminate the need for any documentation",
+        "To replace the need for testing entirely"
+      ],
+      "correct": 0,
+      "exp": "Formal review catches risks, conflicts, and impacts that an individual engineer might miss, reducing the chance of unplanned outages from poorly coordinated changes."
+    },
+    {
+      "id": "threat_intelligence_feeds_1",
+      "topic": "Threat Intelligence Feeds",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A SOC subscribes to a service that continuously provides indicators of compromise, known malicious IPs, and details on emerging attack campaigns, formatted using standards like STIX/TAXII so security tools can automatically ingest and act on them. What is this called?",
+      "choices": [
+        "A threat intelligence feed",
+        "A SIEM dashboard",
+        "A vulnerability scanner",
+        "A penetration test report"
+      ],
+      "correct": 0,
+      "exp": "Threat intelligence feeds provide continuously updated, often standardized (STIX/TAXII) data about known threats, IOCs, and attacker tactics that security tools can consume automatically."
+    },
+    {
+      "id": "threat_intelligence_feeds_2",
+      "topic": "Threat Intelligence Feeds",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is the primary operational value of integrating an automated threat intelligence feed into a SIEM?",
+      "choices": [
+        "It lets the SIEM automatically correlate internal events against known malicious indicators without manual lookup for every alert",
+        "It eliminates the need for any human security analysts",
+        "It guarantees zero false positives forever",
+        "It replaces the need for a firewall"
+      ],
+      "correct": 0,
+      "exp": "Automated feed integration lets detection tools flag matches against known-bad indicators in near real time, without analysts manually cross-referencing every event by hand."
+    },
+    {
+      "id": "bug_bounty_programs_1",
+      "topic": "Bug Bounty Programs",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A company publicly invites independent security researchers to find and responsibly report vulnerabilities in its applications in exchange for monetary rewards based on severity. What is this program called?",
+      "choices": [
+        "A bug bounty program",
+        "A penetration test",
+        "A vulnerability scan",
+        "A tabletop exercise"
+      ],
+      "correct": 0,
+      "exp": "Bug bounty programs crowdsource vulnerability discovery from independent researchers, paying rewards for responsibly disclosed, verified findings."
+    },
+    {
+      "id": "bug_bounty_programs_2",
+      "topic": "Bug Bounty Programs",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "How does a bug bounty program typically differ from a traditional, contracted penetration test?",
+      "choices": [
+        "A bug bounty is open-ended and crowdsourced from many independent researchers over time, while a pentest is a scoped, time-boxed engagement with a specific contracted team",
+        "A bug bounty always costs more than a penetration test",
+        "A penetration test never has defined rules of engagement",
+        "They are functionally identical processes"
+      ],
+      "correct": 0,
+      "exp": "Bug bounties are ongoing and open to a broad pool of researchers, while pentests are scoped, contracted, time-boxed engagements with a specific team."
+    },
+    {
+      "id": "red_team_vs_blue_team_vs_purple_team_1",
+      "topic": "Red Team vs Blue Team vs Purple Team",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "During a security exercise, one group actively attempts to breach the organization's defenses using real-world attacker techniques, while another group defends and responds to the intrusion attempts in real time. What are these two groups called, respectively?",
+      "choices": [
+        "Red team (attackers) and blue team (defenders)",
+        "Purple team and white team",
+        "Black team and gray team",
+        "Audit team and compliance team"
+      ],
+      "correct": 0,
+      "exp": "The red team simulates real attackers to test defenses; the blue team is the defensive side detecting and responding to those simulated attacks."
+    },
+    {
+      "id": "red_team_vs_blue_team_vs_purple_team_2",
+      "topic": "Red Team vs Blue Team vs Purple Team",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is the purpose of a purple team exercise?",
+      "choices": [
+        "To have the red and blue teams collaborate directly, sharing techniques and findings in real time to improve detection and defense together",
+        "To replace the need for either a red team or a blue team",
+        "To conduct only passive reconnaissance with no active testing",
+        "To audit financial records rather than security controls"
+      ],
+      "correct": 0,
+      "exp": "Purple teaming intentionally breaks down the red-vs-blue separation, having both sides collaborate to maximize learning and improve detection capability directly."
+    },
+    {
+      "id": "honeytoken_vs_honeynet_1",
+      "topic": "Honeytoken vs Honeynet",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A security team plants a fake API key in a code repository that should never be used legitimately, and sets up an alert that fires the instant that fake key is ever used. What is this individual decoy called?",
+      "choices": [
+        "A honeytoken",
+        "A honeynet",
+        "A honeypot",
+        "A screened subnet"
+      ],
+      "correct": 0,
+      "exp": "A honeytoken is a single piece of fake data (credential, API key, database record) planted to detect unauthorized use -- a smaller-scale, targeted version of a honeypot."
+    },
+    {
+      "id": "honeytoken_vs_honeynet_2",
+      "topic": "Honeytoken vs Honeynet",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "How does a honeynet differ from a single honeypot?",
+      "choices": [
+        "A honeynet is an entire simulated network of multiple decoy systems, while a honeypot is typically a single decoy system",
+        "A honeynet is a single decoy file, while a honeypot is an entire network",
+        "They are the exact same thing with different names",
+        "A honeynet only detects insider threats, never external attackers"
+      ],
+      "correct": 0,
+      "exp": "A honeynet scales the honeypot concept up to a whole simulated network, giving attackers a more elaborate, realistic-looking environment to explore while being observed."
+    },
+    {
+      "id": "biometric_authentication_factors_1",
+      "topic": "Biometric Authentication Factors",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A data center entrance requires employees to look into a scanner that analyzes the unique pattern of blood vessels in their eye before unlocking the door. What authentication factor category does this represent?",
+      "choices": [
+        "Something you are (biometric)",
+        "Something you know",
+        "Something you have",
+        "Somewhere you are"
+      ],
+      "correct": 0,
+      "exp": "Retina/iris scanning is a biometric method, falling under the 'something you are' authentication factor category."
+    },
+    {
+      "id": "biometric_authentication_factors_2",
+      "topic": "Biometric Authentication Factors",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is a notable operational drawback of biometric authentication compared to password-based authentication?",
+      "choices": [
+        "A biometric factor cannot be changed like a password if it is ever compromised or spoofed",
+        "Biometrics can be easily reset and reissued like a forgotten password",
+        "Biometric systems never produce false rejections or false acceptances",
+        "Biometrics require no hardware to implement"
+      ],
+      "correct": 0,
+      "exp": "Unlike a password, you can't simply 'reset' your fingerprint or iris pattern if it's compromised -- that permanence is a real operational and privacy concern for biometric systems."
+    },
+    {
+      "id": "oauth_vs_saml_1",
+      "topic": "OAuth vs SAML",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A third-party app requests limited permission to access a user's photos stored in another service, without ever seeing that user's actual password for the photo service. Which protocol is designed specifically for this kind of delegated authorization?",
+      "choices": [
+        "OAuth",
+        "SAML",
+        "Kerberos",
+        "RADIUS"
+      ],
+      "correct": 0,
+      "exp": "OAuth is designed for delegated authorization -- granting a third-party application limited access to a resource on the user's behalf, without sharing credentials."
+    },
+    {
+      "id": "oauth_vs_saml_2",
+      "topic": "OAuth vs SAML",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "How does SAML's typical use case differ from OAuth's typical use case?",
+      "choices": [
+        "SAML is commonly used for enterprise single sign-on (authentication), while OAuth is commonly used for delegated authorization to access specific resources",
+        "SAML and OAuth are interchangeable with no meaningful differences",
+        "OAuth is only used for physical building access",
+        "SAML cannot be used with a browser"
+      ],
+      "correct": 0,
+      "exp": "SAML is traditionally associated with enterprise SSO authentication scenarios, while OAuth focuses on granting scoped access/authorization to resources, often between applications."
+    },
+    {
+      "id": "credential_rotation_1",
+      "topic": "Credential Rotation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A company's policy requires that service account passwords and API keys used by automated systems be automatically changed on a regular schedule, reducing the window of usefulness if one is ever leaked. What is this practice called?",
+      "choices": [
+        "Credential rotation",
+        "Key escrow",
+        "Federation",
+        "Tokenization"
+      ],
+      "correct": 0,
+      "exp": "Regularly rotating credentials (especially for service accounts and API keys, which are hard to monitor for misuse) limits how long a leaked credential remains useful to an attacker."
+    },
+    {
+      "id": "credential_rotation_2",
+      "topic": "Credential Rotation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Why is credential rotation particularly important for service accounts and API keys compared to human user passwords?",
+      "choices": [
+        "Service account credentials are often long-lived, widely embedded in automation, and harder to monitor for misuse, making regular rotation an important compensating control",
+        "Service accounts never have any access to sensitive systems",
+        "API keys cannot be leaked under any circumstances",
+        "Human passwords never need to be rotated at all"
+      ],
+      "correct": 0,
+      "exp": "Because service accounts/API keys are embedded in scripts and integrations (and often overlooked in security reviews), regular rotation helps limit exposure from an undetected leak."
+    },
+    {
+      "id": "siem_correlation_rules_1",
+      "topic": "SIEM Correlation Rules",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A SIEM is configured to trigger a high-priority alert only when it sees a failed login from an unusual country, followed within five minutes by a successful login from that same account, and then a large data export. What SIEM capability does this represent?",
+      "choices": [
+        "A correlation rule combining multiple related events into a single meaningful alert",
+        "A single-event signature match",
+        "A network vulnerability scan",
+        "A firewall access control list"
+      ],
+      "correct": 0,
+      "exp": "Correlation rules combine multiple individually unremarkable events into a pattern that, together, indicates a likely compromise -- far more useful than alerting on any single event alone."
+    },
+    {
+      "id": "siem_correlation_rules_2",
+      "topic": "SIEM Correlation Rules",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is the main advantage of SIEM correlation rules over alerting on individual log events in isolation?",
+      "choices": [
+        "They can identify multi-step attack patterns that no single log entry would reveal on its own",
+        "They eliminate the need to collect logs from more than one source",
+        "They guarantee there will never be false positives",
+        "They only work with encrypted traffic"
+      ],
+      "correct": 0,
+      "exp": "Many real attacks unfold across multiple steps and systems; correlation connects those dots in a way that isolated single-event alerting cannot."
+    },
+    {
+      "id": "endpoint_dlp_vs_network_dlp_1",
+      "topic": "Endpoint DLP vs Network DLP",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A company wants to block employees from copying sensitive files to a USB drive directly from their laptop, even when the laptop is disconnected from the corporate network. What type of DLP deployment is needed?",
+      "choices": [
+        "Endpoint DLP",
+        "Network DLP",
+        "Cloud-only DLP",
+        "Email-gateway-only DLP"
+      ],
+      "correct": 0,
+      "exp": "Endpoint DLP agents run directly on the device, enforcing policy (like blocking USB transfers) even when the device isn't connected to the corporate network."
+    },
+    {
+      "id": "endpoint_dlp_vs_network_dlp_2",
+      "topic": "Endpoint DLP vs Network DLP",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Which type of DLP deployment is best suited to inspecting and blocking sensitive data as it leaves the organization via email or web uploads while traversing the corporate network?",
+      "choices": [
+        "Network DLP",
+        "Endpoint DLP only",
+        "Physical DLP",
+        "Biometric DLP"
+      ],
+      "correct": 0,
+      "exp": "Network DLP inspects traffic crossing network egress points (like email gateways or web proxies), catching sensitive data leaving via those channels."
+    },
+    {
+      "id": "patch_testing_and_staging_environments_1",
+      "topic": "Patch Testing and Staging Environments",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Before deploying a critical operating system patch to thousands of production servers, an organization first applies it to a small, representative subset of non-production systems to confirm nothing breaks. What environment is this?",
+      "choices": [
+        "A staging/test environment",
+        "The production environment directly",
+        "A honeynet",
+        "A screened subnet"
+      ],
+      "correct": 0,
+      "exp": "A staging environment mirrors production closely enough to catch compatibility or stability issues with a patch before it's rolled out broadly."
+    },
+    {
+      "id": "patch_testing_and_staging_environments_2",
+      "topic": "Patch Testing and Staging Environments",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What risk does deploying patches directly to production without first testing them in staging primarily introduce?",
+      "choices": [
+        "Unexpected application or system breakage discovered only after it has already affected live users",
+        "Improved system performance across the board",
+        "Guaranteed successful patch installation every time",
+        "Elimination of the need for a backout plan"
+      ],
+      "correct": 0,
+      "exp": "Skipping staging means any compatibility issues or bugs introduced by the patch are discovered in production, potentially causing real outages or data issues."
+    },
+    {
+      "id": "configuration_management_automation_1",
+      "topic": "Configuration Management Automation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A team uses a tool to define server configurations as code, then automatically applies and enforces that exact configuration across hundreds of servers, correcting any that have drifted from the defined baseline. What practice is this?",
+      "choices": [
+        "Automated configuration management",
+        "Manual change management only",
+        "Data classification",
+        "Chain of custody"
+      ],
+      "correct": 0,
+      "exp": "Configuration management tools (like Ansible, Puppet, or Chef) define desired system state as code and automatically enforce it, correcting drift across large fleets of systems consistently."
+    },
+    {
+      "id": "configuration_management_automation_2",
+      "topic": "Configuration Management Automation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "How does automated configuration management help maintain a secure baseline across a large server fleet?",
+      "choices": [
+        "It automatically detects and corrects configuration drift, keeping systems consistently aligned with the defined secure baseline over time",
+        "It eliminates the need for any baseline to be defined in the first place",
+        "It only applies configuration once at initial server setup, with no ongoing enforcement",
+        "It replaces the need for patch management entirely"
+      ],
+      "correct": 0,
+      "exp": "Continuous, automated enforcement (not just one-time setup) is what keeps large fleets from silently drifting out of compliance with the intended secure baseline."
+    },
+    {
+      "id": "backup_testing_and_verification_1",
+      "topic": "Backup Testing and Verification",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A company performs nightly backups but has never actually attempted to restore data from them, only to discover during a real outage that the backup files were corrupted and unusable. What critical step did they skip?",
+      "choices": [
+        "Regularly testing/verifying that backups can actually be restored",
+        "Encrypting the backup data",
+        "Choosing a backup frequency",
+        "Selecting an offsite storage location"
+      ],
+      "correct": 0,
+      "exp": "A backup is only as good as its proven ability to be restored -- without regular restore testing, an organization has no real assurance its backups will work when actually needed."
+    },
+    {
+      "id": "backup_testing_and_verification_2",
+      "topic": "Backup Testing and Verification",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Why do best practices recommend periodically performing full test restores of backup data, not just confirming the backup job completed successfully?",
+      "choices": [
+        "A completed backup job doesn't guarantee the data is actually usable or restorable; only a test restore proves that",
+        "Test restores are required by law in every jurisdiction",
+        "It replaces the need for offsite backup storage",
+        "It eliminates the need for encryption of backup data"
+      ],
+      "correct": 0,
+      "exp": "Backup jobs can 'succeed' while still producing corrupted or incomplete data -- only an actual test restore confirms the backup is truly usable in a real recovery."
+    },
+    {
+      "id": "digital_forensics_imaging_1",
+      "topic": "Digital Forensics Imaging",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Before analyzing a seized hard drive, a forensic investigator creates a bit-for-bit copy of the entire drive, then calculates and records a cryptographic hash of both the original and the copy to prove they are identical. What is this initial step called?",
+      "choices": [
+        "Forensic imaging (disk imaging)",
+        "Legal hold",
+        "Order of volatility",
+        "Data sanitization"
+      ],
+      "correct": 0,
+      "exp": "Forensic imaging creates an exact bit-for-bit copy of storage media, with hash verification, so all subsequent analysis is performed on the copy while preserving the integrity of the original evidence."
+    },
+    {
+      "id": "digital_forensics_imaging_2",
+      "topic": "Digital Forensics Imaging",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Why do forensic investigators calculate and record a cryptographic hash of a drive image immediately after creating it?",
+      "choices": [
+        "To prove the image is an exact, unaltered copy of the original evidence, supporting its integrity if challenged later",
+        "To encrypt the drive so no one else can access it",
+        "To speed up the imaging process",
+        "To satisfy data retention policy requirements only"
+      ],
+      "correct": 0,
+      "exp": "A matching hash between original and image provides cryptographic proof of integrity, which is critical for the evidence to hold up if the investigation leads to legal proceedings."
+    },
+    {
+      "id": "mobile_device_management_(mdm)_policies_1",
+      "topic": "Mobile Device Management (MDM) Policies",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "An organization wants the ability to remotely enforce passcode requirements, encrypt data, and wipe a lost or stolen employee smartphone that has access to corporate email. What type of solution provides this centralized control?",
+      "choices": [
+        "MDM (Mobile Device Management)",
+        "A CASB",
+        "A WAF",
+        "NAC"
+      ],
+      "correct": 0,
+      "exp": "MDM solutions let organizations centrally enforce security policy (passcodes, encryption, remote wipe) on enrolled mobile devices."
+    },
+    {
+      "id": "mobile_device_management_(mdm)_policies_2",
+      "topic": "Mobile Device Management (MDM) Policies",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Which MDM capability is most critical for immediately limiting data exposure when an employee reports their corporate-enrolled phone as lost or stolen?",
+      "choices": [
+        "Remote wipe",
+        "Application allowlisting",
+        "Wi-Fi profile configuration",
+        "Battery usage monitoring"
+      ],
+      "correct": 0,
+      "exp": "Remote wipe lets the organization immediately erase corporate (or all) data on a lost/stolen device before it can be accessed by whoever finds or takes it."
+    },
+    {
+      "id": "application_allowlisting_enforcement_1",
+      "topic": "Application Allowlisting Enforcement",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A high-security workstation is configured so that only a specific, pre-approved list of applications can execute; any unrecognized executable, including malware, is blocked from running by default. What technique is this?",
+      "choices": [
+        "Application allowlisting",
+        "Application blocklisting",
+        "Sandboxing",
+        "Network segmentation"
+      ],
+      "correct": 0,
+      "exp": "Application allowlisting blocks everything by default except explicitly approved software, providing strong protection against unknown/unauthorized executables including most malware."
+    },
+    {
+      "id": "application_allowlisting_enforcement_2",
+      "topic": "Application Allowlisting Enforcement",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is a key operational tradeoff organizations face when implementing strict application allowlisting?",
+      "choices": [
+        "It requires ongoing maintenance to keep the approved list current as legitimate software needs change, or users experience disruption",
+        "It provides weaker protection than blocklisting in every scenario",
+        "It cannot be applied to servers, only workstations",
+        "It eliminates the need for any other endpoint security controls"
+      ],
+      "correct": 0,
+      "exp": "Because only explicitly listed software can run, allowlisting requires diligent list maintenance -- legitimate new or updated software must be added, or users will be blocked from running it."
+    },
+    {
+      "id": "microsegmentation_1",
+      "topic": "Microsegmentation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Instead of relying on broad VLANs, a data center enforces granular security policies between individual workloads, so that even two servers on the same subnet cannot communicate unless explicitly permitted. What is this approach called?",
+      "choices": [
+        "Microsegmentation",
+        "VM sprawl",
+        "Air gapping",
+        "Load balancing"
+      ],
+      "correct": 0,
+      "exp": "Microsegmentation applies fine-grained, workload-level (rather than just network/subnet-level) segmentation policies, often software-defined, limiting lateral movement even within the same broader network segment."
+    },
+    {
+      "id": "microsegmentation_2",
+      "topic": "Microsegmentation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "How does microsegmentation improve on traditional VLAN-based network segmentation for limiting an attacker's lateral movement?",
+      "choices": [
+        "It enforces granular policy between individual workloads, not just between broad network segments, so a compromised host can't automatically reach every other host on its VLAN",
+        "It removes the need for a firewall entirely",
+        "It only applies to physical, non-virtualized servers",
+        "It eliminates the need to authenticate any traffic"
+      ],
+      "correct": 0,
+      "exp": "Traditional VLAN segmentation still typically allows relatively free communication within the same VLAN; microsegmentation restricts communication at a much finer, per-workload granularity, containing an attacker who does get a foothold."
+    },
+    {
+      "id": "nist_cybersecurity_framework_1",
+      "topic": "NIST Cybersecurity Framework",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "An organization adopts a voluntary framework built around five core functions -- Identify, Protect, Detect, Respond, and Recover -- to structure and communicate its overall cybersecurity risk management program. What framework is this?",
+      "choices": [
+        "The NIST Cybersecurity Framework (CSF)",
+        "ISO 31000",
+        "PCI DSS",
+        "GLBA"
+      ],
+      "correct": 0,
+      "exp": "The NIST CSF organizes cybersecurity activities around five core functions (Identify, Protect, Detect, Respond, Recover), widely used as a flexible, non-prescriptive risk management structure."
+    },
+    {
+      "id": "nist_cybersecurity_framework_2",
+      "topic": "NIST Cybersecurity Framework",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Which of the five NIST Cybersecurity Framework core functions specifically covers activities like incident detection and continuous monitoring?",
+      "choices": [
+        "Detect",
+        "Identify",
+        "Protect",
+        "Recover"
+      ],
+      "correct": 0,
+      "exp": "The Detect function covers activities that enable timely discovery of cybersecurity events, such as continuous monitoring and anomaly detection."
+    },
+    {
+      "id": "pci_dss_1",
+      "topic": "PCI DSS",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A retail company that processes credit card payments must comply with a security standard specifically established by the payment card industry, covering requirements like network segmentation, encryption of cardholder data, and regular vulnerability scanning. What standard is this?",
+      "choices": [
+        "PCI DSS (Payment Card Industry Data Security Standard)",
+        "HIPAA",
+        "GLBA",
+        "SOX"
+      ],
+      "correct": 0,
+      "exp": "PCI DSS is a contractual, industry-mandated standard (not a government law) that any organization handling cardholder data must comply with, covering technical and operational security requirements."
+    },
+    {
+      "id": "pci_dss_2",
+      "topic": "PCI DSS",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "An organization that stores, processes, or transmits credit card data but is found not compliant with PCI DSS primarily faces what consequence?",
+      "choices": [
+        "Fines and potential loss of the ability to process card payments, imposed by payment card brands/processors",
+        "Criminal prosecution under federal healthcare law",
+        "Automatic revocation of its business license by the government",
+        "No consequences, since PCI DSS is purely optional guidance"
+      ],
+      "correct": 0,
+      "exp": "PCI DSS enforcement comes from the payment card brands and processors (via contracts), not directly from government law -- non-compliance risks fines and loss of card processing privileges."
+    },
+    {
+      "id": "hipaa_1",
+      "topic": "HIPAA",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A hospital must comply with a U.S. federal law that establishes requirements for protecting patients' medical records and health information, including specific security and privacy rules. What law is this?",
+      "choices": [
+        "HIPAA (Health Insurance Portability and Accountability Act)",
+        "PCI DSS",
+        "GLBA",
+        "SOX"
+      ],
+      "correct": 0,
+      "exp": "HIPAA establishes federal requirements for protecting protected health information (PHI), including its Security Rule and Privacy Rule provisions."
+    },
+    {
+      "id": "hipaa_2",
+      "topic": "HIPAA",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Under HIPAA, what term describes patient health information that is specifically protected by the law's security and privacy requirements?",
+      "choices": [
+        "Protected Health Information (PHI)",
+        "Cardholder data",
+        "Personally Identifiable Financial Information",
+        "Classified information"
+      ],
+      "correct": 0,
+      "exp": "HIPAA specifically governs Protected Health Information (PHI) -- individually identifiable health data held by covered entities and their business associates."
+    },
+    {
+      "id": "sox_(sarbanes-oxley)_1",
+      "topic": "SOX (Sarbanes-Oxley)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A publicly traded company must maintain strict internal controls over financial reporting systems and undergo regular audits to prevent accounting fraud, as required by a U.S. federal law passed after major corporate accounting scandals. What law is this?",
+      "choices": [
+        "SOX (Sarbanes-Oxley Act)",
+        "HIPAA",
+        "PCI DSS",
+        "GLBA"
+      ],
+      "correct": 0,
+      "exp": "SOX was enacted after major corporate accounting scandals (like Enron) to enforce strict internal controls and accountability over financial reporting for publicly traded companies."
+    },
+    {
+      "id": "sox_(sarbanes-oxley)_2",
+      "topic": "SOX (Sarbanes-Oxley)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "From an IT security perspective, why does SOX compliance matter to a company's technology systems, even though it's primarily a financial law?",
+      "choices": [
+        "It requires strong access controls, change management, and audit trails specifically around systems that handle financial reporting data",
+        "It only applies to healthcare organizations",
+        "It mandates a specific wireless encryption standard",
+        "It has no relevance to IT systems whatsoever"
+      ],
+      "correct": 0,
+      "exp": "Because SOX requires reliable, tamper-evident financial reporting, the IT systems that process and store that financial data must have strong access controls, logging, and change management to support compliance."
+    },
+    {
+      "id": "glba_(gramm-leach-bliley_act)_1",
+      "topic": "GLBA (Gramm-Leach-Bliley Act)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A bank must comply with a U.S. federal law requiring financial institutions to explain their information-sharing practices to customers and to implement safeguards protecting customers' nonpublic personal financial information. What law is this?",
+      "choices": [
+        "GLBA (Gramm-Leach-Bliley Act)",
+        "HIPAA",
+        "SOX",
+        "PCI DSS"
+      ],
+      "correct": 0,
+      "exp": "GLBA governs how financial institutions handle and protect customers' nonpublic personal financial information, including requirements for privacy notices and security safeguards."
+    },
+    {
+      "id": "glba_(gramm-leach-bliley_act)_2",
+      "topic": "GLBA (Gramm-Leach-Bliley Act)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Which sector of organizations is primarily regulated by the Gramm-Leach-Bliley Act's privacy and safeguarding requirements?",
+      "choices": [
+        "Financial institutions (banks, credit unions, insurance companies, etc.)",
+        "Healthcare providers only",
+        "Publicly traded manufacturing companies only",
+        "Government contractors only"
+      ],
+      "correct": 0,
+      "exp": "GLBA specifically targets financial institutions and their handling of customers' nonpublic personal financial information."
+    },
+    {
+      "id": "raci_matrix_1",
+      "topic": "RACI Matrix",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A project manager creates a chart identifying, for each task in a security initiative, exactly who is Responsible for doing the work, who is Accountable for the outcome, who should be Consulted, and who should simply be Informed. What is this chart called?",
+      "choices": [
+        "A RACI matrix",
+        "A risk register",
+        "A responsibility matrix (cloud shared responsibility)",
+        "A business impact analysis"
+      ],
+      "correct": 0,
+      "exp": "A RACI matrix (Responsible, Accountable, Consulted, Informed) clarifies roles and expectations for each task in a project or process, reducing ambiguity about who does what."
+    },
+    {
+      "id": "raci_matrix_2",
+      "topic": "RACI Matrix",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "In a RACI matrix, what is the key distinction between the 'Responsible' and 'Accountable' designations for a given task?",
+      "choices": [
+        "Responsible is the person(s) who actually perform the work, while Accountable is the person ultimately answerable for its correct completion",
+        "They are two names for the exact same role with no distinction",
+        "Accountable always refers to an external auditor",
+        "Responsible only applies to physical security tasks"
+      ],
+      "correct": 0,
+      "exp": "Multiple people can be Responsible for doing the work, but typically only one person is Accountable -- ultimately answerable for the task's success or failure."
+    },
+    {
+      "id": "business_continuity_vs_disaster_recovery_1",
+      "topic": "Business Continuity vs Disaster Recovery",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "After a major flood damages a company's primary office, one plan focuses narrowly on restoring IT systems and data, while a separate, broader plan addresses how the entire business -- including staffing, communications, and physical operations -- keeps functioning. What is the broader plan called?",
+      "choices": [
+        "The business continuity plan",
+        "The disaster recovery plan",
+        "The incident response plan",
+        "The risk register"
+      ],
+      "correct": 0,
+      "exp": "Business continuity planning is broader than disaster recovery -- it addresses keeping the whole organization operating (not just IT systems) through a disruption. Disaster recovery is often considered a subset focused specifically on restoring technology."
+    },
+    {
+      "id": "business_continuity_vs_disaster_recovery_2",
+      "topic": "Business Continuity vs Disaster Recovery",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "How does disaster recovery planning typically differ in scope from business continuity planning?",
+      "choices": [
+        "Disaster recovery focuses specifically on restoring IT systems and data, while business continuity addresses the broader organization's ability to keep operating",
+        "Disaster recovery addresses the whole business while business continuity only covers IT",
+        "They are identical in scope with different names",
+        "Business continuity only applies to natural disasters"
+      ],
+      "correct": 0,
+      "exp": "DR is generally the narrower, IT-focused subset of the broader BC effort, which also covers people, facilities, communications, and non-IT operations."
+    },
+    {
+      "id": "tabletop_exercise_facilitation_1",
+      "topic": "Tabletop Exercise Facilitation",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A facilitator walks a group of key stakeholders through a simulated ransomware scenario verbally, asking each person to describe what actions their team would take at each stage, without actually touching any real systems. What is this exercise called?",
+      "choices": [
+        "A tabletop exercise",
+        "A live failover test",
+        "A penetration test",
+        "A vulnerability scan"
+      ],
+      "correct": 0,
+      "exp": "A tabletop exercise is a discussion-based walkthrough of a scenario, testing plans and decision-making without any live technical action -- lower cost and disruption than a full failover test."
+    },
+    {
+      "id": "tabletop_exercise_facilitation_2",
+      "topic": "Tabletop Exercise Facilitation",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "What is a key benefit of a well-facilitated tabletop exercise for incident response planning?",
+      "choices": [
+        "It identifies gaps in the response plan and unclear roles/responsibilities in a low-risk, discussion-based setting before a real incident occurs",
+        "It provides definitive proof that backup systems will actually work under load",
+        "It replaces the need for any technical security controls",
+        "It is the only way to satisfy legal chain-of-custody requirements"
+      ],
+      "correct": 0,
+      "exp": "Tabletop exercises are valuable specifically because they surface planning gaps and confusion cheaply and safely, before those same gaps cause real problems during an actual incident."
+    },
+    {
+      "id": "vendor_lock-in_risk_1",
+      "topic": "Vendor Lock-In Risk",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A company builds its entire application using a specific cloud provider's proprietary services, making it extremely costly and technically difficult to ever migrate to a different provider. What risk does this illustrate?",
+      "choices": [
+        "Vendor lock-in",
+        "Data sovereignty risk",
+        "Shadow IT",
+        "Conflict of interest"
+      ],
+      "correct": 0,
+      "exp": "Vendor lock-in occurs when heavy reliance on a specific vendor's proprietary technology makes switching providers prohibitively expensive or technically difficult, reducing negotiating leverage and flexibility."
+    },
+    {
+      "id": "vendor_lock-in_risk_2",
+      "topic": "Vendor Lock-In Risk",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Which strategy directly helps reduce an organization's exposure to vendor lock-in risk?",
+      "choices": [
+        "Favoring open standards and portable architectures over heavy use of a single vendor's proprietary services where practical",
+        "Consolidating every system with a single vendor for simplicity",
+        "Signing the longest possible contract term available",
+        "Avoiding all use of cloud services entirely"
+      ],
+      "correct": 0,
+      "exp": "Designing around open standards and portability keeps switching costs lower and preserves negotiating leverage, directly mitigating lock-in risk."
+    },
+    {
+      "id": "right-to-audit_clause_1",
+      "topic": "Right-to-Audit Clause",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A company negotiates a contract with a cloud vendor that explicitly grants the company the ability to inspect the vendor's security controls, processes, and compliance documentation directly, rather than relying solely on the vendor's self-attestations. What contractual provision is this?",
+      "choices": [
+        "A right-to-audit clause",
+        "A non-disclosure agreement",
+        "A service level agreement",
+        "A memorandum of understanding"
+      ],
+      "correct": 0,
+      "exp": "A right-to-audit clause gives the customer explicit contractual permission to verify a vendor's security posture directly, rather than trusting the vendor's word alone."
+    },
+    {
+      "id": "right-to-audit_clause_2",
+      "topic": "Right-to-Audit Clause",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Why might a heavily regulated organization (like a bank) insist on a right-to-audit clause when contracting with a critical third-party vendor?",
+      "choices": [
+        "To independently verify the vendor's security controls meet regulatory requirements, since the regulated organization remains accountable for that data's protection",
+        "Because it eliminates the need for the vendor to have any security controls at all",
+        "Because it transfers 100% of legal liability to the vendor automatically",
+        "Because it replaces the need for a formal contract entirely"
+      ],
+      "correct": 0,
+      "exp": "Regulated organizations often remain ultimately accountable for data even when a vendor processes it, so independent verification rights help them confirm the vendor is actually meeting required security standards."
+    },
+    {
+      "id": "cyber_liability_insurance_1",
+      "topic": "Cyber Liability Insurance",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A company purchases a policy that will cover costs like breach notification, legal fees, and business interruption losses in the event of a significant data breach or ransomware attack. What is this type of policy called?",
+      "choices": [
+        "Cyber liability insurance",
+        "A service level agreement",
+        "A right-to-audit clause",
+        "A business impact analysis"
+      ],
+      "correct": 0,
+      "exp": "Cyber liability insurance is a risk transference mechanism, shifting some of the financial impact of a cybersecurity incident to an insurer in exchange for premiums."
+    },
+    {
+      "id": "cyber_liability_insurance_2",
+      "topic": "Cyber Liability Insurance",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Purchasing cyber liability insurance is best classified as which risk management strategy?",
+      "choices": [
+        "Risk transference",
+        "Risk avoidance",
+        "Risk acceptance",
+        "Risk mitigation"
+      ],
+      "correct": 0,
+      "exp": "Insurance shifts the financial burden of a risk to a third party (the insurer), which is the definition of risk transference -- it doesn't reduce the likelihood of an incident occurring."
+    },
+    {
+      "id": "change_management_approval_workflow_1",
+      "topic": "Change Management Approval Workflow",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A proposed change to a production database requires sign-off from the database owner, the security team, and the change advisory board before it can be scheduled, with each approval documented in a ticketing system. What does this multi-step process ensure?",
+      "choices": [
+        "That changes are properly reviewed and authorized by all relevant stakeholders before implementation, with an auditable record",
+        "That changes never need to be tested before deployment",
+        "That only one person is ever responsible for approving any change",
+        "That security review can be skipped if the change is urgent enough"
+      ],
+      "correct": 0,
+      "exp": "A structured, multi-stakeholder approval workflow ensures changes are properly vetted from multiple angles (technical, security, business) and creates an auditable trail of who approved what."
+    },
+    {
+      "id": "change_management_approval_workflow_2",
+      "topic": "Change Management Approval Workflow",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "What is the primary security benefit of requiring documented, multi-stakeholder approval before implementing a significant infrastructure change?",
+      "choices": [
+        "It reduces the risk of unreviewed changes introducing vulnerabilities or outages, and creates accountability if something does go wrong",
+        "It guarantees the change will have zero impact on users",
+        "It removes the need for a rollback/backout plan",
+        "It allows changes to be implemented without any documentation"
+      ],
+      "correct": 0,
+      "exp": "Multiple reviewers catch risks a single person might miss, and the documented approval trail provides accountability and traceability if a change causes problems."
+    },
+    {
+      "id": "data_subject_access_request_(dsar)_1",
+      "topic": "Data Subject Access Request (DSAR)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Under privacy regulations like GDPR, an individual formally requests that a company provide a copy of all the personal data it holds about them. What is this type of request called?",
+      "choices": [
+        "A Data Subject Access Request (DSAR)",
+        "A legal hold",
+        "A right-to-audit request",
+        "A business impact analysis"
+      ],
+      "correct": 0,
+      "exp": "A DSAR is a formal request from an individual (the data subject) asking an organization to disclose what personal data it holds about them, a right guaranteed under regulations like GDPR."
+    },
+    {
+      "id": "data_subject_access_request_(dsar)_2",
+      "topic": "Data Subject Access Request (DSAR)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Which internal capability must an organization have in place to efficiently respond to Data Subject Access Requests within required regulatory timeframes?",
+      "choices": [
+        "An accurate data inventory showing where personal data about individuals is stored across all systems",
+        "A red team engagement report",
+        "A cyber liability insurance policy",
+        "A wireless site survey"
+      ],
+      "correct": 0,
+      "exp": "Without knowing where personal data actually lives across its systems, an organization cannot efficiently or completely respond to a DSAR within the regulation's required timeframe."
     }
   ],
   "pbq": [
