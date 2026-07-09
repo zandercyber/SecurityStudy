@@ -7568,6 +7568,756 @@
       ],
       "correct": 0,
       "exp": "Without knowing where personal data actually lives across its systems, an organization cannot efficiently or completely respond to a DSAR within the regulation's required timeframe."
+    },
+    {
+      "id": "availability_priority_for_critical_systems_1",
+      "topic": "Availability Priority for Critical Systems",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A county is designing a 911 dispatch platform that routes emergency calls to the nearest ambulance crew. Which security priority should weigh heaviest in the design?",
+      "choices": [
+        "Minimizing third-party integration costs",
+        "Ensuring vendor patches are readily available",
+        "Keeping the dispatch system continuously available",
+        "Reducing the power draw of dispatch hardware"
+      ],
+      "correct": 2,
+      "exp": "For life-safety systems like emergency dispatch, uptime trumps almost everything else -- a call that can't be routed because the system is down can cost lives, so availability is the dominant design priority."
+    },
+    {
+      "id": "availability_priority_for_critical_systems_2",
+      "topic": "Availability Priority for Critical Systems",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A regional trauma network is choosing between two vendors for its ambulance routing software. One offers cheaper licensing; the other offers a guaranteed 99.999% uptime SLA at a higher price. Which should the network prioritize, and why?",
+      "choices": [
+        "The cheaper option, since cost control matters most for public agencies",
+        "The higher-uptime option, because dispatch failures directly endanger patients",
+        "Whichever vendor patches vulnerabilities fastest",
+        "Whichever system uses the least electricity"
+      ],
+      "correct": 1,
+      "exp": "When a system's downtime directly translates to delayed emergency response, availability becomes the overriding requirement, even at a higher cost."
+    },
+    {
+      "id": "automated_access_change_alerts_1",
+      "topic": "Automated Access Change Alerts",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Whenever someone's permissions change on a database holding customer PII, the security team automatically receives a text message within seconds, with no human having to run a report. What best describes this capability?",
+      "choices": [
+        "A scheduled maintenance window",
+        "Attestation and acknowledgment",
+        "Automation of monitoring and alerting",
+        "An external audit"
+      ],
+      "correct": 2,
+      "exp": "Automatically generating and delivering an alert the instant a triggering event occurs is a classic automation use case -- it removes the need for someone to manually check for the change."
+    },
+    {
+      "id": "automated_access_change_alerts_2",
+      "topic": "Automated Access Change Alerts",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A retailer configures its identity system to immediately notify security staff whenever a privileged role is assigned to a new account, without requiring anyone to periodically pull a report. What capability does this rely on?",
+      "choices": [
+        "A right-to-audit clause",
+        "Automated event-triggered alerting",
+        "A tabletop exercise",
+        "An attestation cycle"
+      ],
+      "correct": 1,
+      "exp": "Real-time, event-triggered notifications are generated through automation -- the system reacts to the change itself rather than waiting for a scheduled human review."
+    },
+    {
+      "id": "removable_media_data_exfiltration_prevention_1",
+      "topic": "Removable Media Data Exfiltration Prevention",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A CISO is worried employees could copy sensitive files onto personal USB drives and walk out with them. What control most directly stops this specific exfiltration path?",
+      "choices": [
+        "An OS-level policy that blocks writing to removable storage devices",
+        "Reviewing host firewall logs weekly for USB activity",
+        "Only approving applications that never touch removable media",
+        "Adding a removable-media rule to the UTM appliance"
+      ],
+      "correct": 0,
+      "exp": "Blocking write access to removable media at the operating system level directly prevents the copy operation from ever succeeding -- the other options either just observe after the fact or don't address the actual USB port."
+    },
+    {
+      "id": "removable_media_data_exfiltration_prevention_2",
+      "topic": "Removable Media Data Exfiltration Prevention",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Which approach provides the strongest protection against an employee exfiltrating confidential files via a USB flash drive?",
+      "choices": [
+        "Enforcing a group policy that disables the ability to write files to removable storage",
+        "Logging removable-media events on the host firewall for later review",
+        "Restricting the app catalog to software that ignores removable drives",
+        "Configuring a removable-media block rule on the perimeter UTM"
+      ],
+      "correct": 0,
+      "exp": "A host-level policy preventing files from being written to removable drives stops the exfiltration before it happens, rather than just detecting it afterward or relying on a perimeter device that doesn't see local USB ports."
+    },
+    {
+      "id": "regulated_data_classification_1",
+      "topic": "Regulated Data Classification",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A utilities company must file a standardized compliance report with a federal agency every quarter, using a format and content set that agency mandates by law. How would this report's data best be classified?",
+      "choices": [
+        "Data in use",
+        "Obfuscated data",
+        "Trade secret data",
+        "Regulated data"
+      ],
+      "correct": 3,
+      "exp": "Data whose handling, format, or disclosure is dictated by law or a governing body is classified as regulated data -- distinct from proprietary trade secrets or data simply in an active-use state."
+    },
+    {
+      "id": "regulated_data_classification_2",
+      "topic": "Regulated Data Classification",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "An insurance company produces a mandatory quarterly filing whose content requirements are dictated entirely by a state insurance commission. What data classification best describes this filing?",
+      "choices": [
+        "Trade secret",
+        "Regulated",
+        "Data in transit",
+        "Public"
+      ],
+      "correct": 1,
+      "exp": "Because a governing authority defines what must be reported and how, this is regulated data, not simply proprietary or public information."
+    },
+    {
+      "id": "certificate_error_indicating_on-path_attack_1",
+      "topic": "Certificate Error Indicating On-Path Attack",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A user tries to reach their bank's website and the browser blocks the page with 'NET::ERR_CERT_INVALID.' Which attack is the most likely explanation?",
+      "choices": [
+        "A brute-force login attempt",
+        "A denial-of-service attack",
+        "An on-path (man-in-the-middle) attack intercepting the connection",
+        "A wireless deauthentication attack"
+      ],
+      "correct": 2,
+      "exp": "An invalid-certificate warning often means something between the user and the real server is presenting its own certificate to intercept traffic -- a hallmark of an on-path attack."
+    },
+    {
+      "id": "certificate_error_indicating_on-path_attack_2",
+      "topic": "Certificate Error Indicating On-Path Attack",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "While connecting to a public Wi-Fi hotspot, an employee's laptop displays a certificate-validation error for a site that normally loads without any warning. What is the most likely cause?",
+      "choices": [
+        "A password-spraying attempt against the site",
+        "An on-path attacker intercepting and re-signing the connection",
+        "A DDoS attack against the site's servers",
+        "A deauthentication attack against the access point"
+      ],
+      "correct": 1,
+      "exp": "A sudden, unexpected certificate error on a normally trusted site strongly suggests traffic is being intercepted and re-presented by an attacker sitting between the client and the real server."
+    },
+    {
+      "id": "deterrent_control_(login_banner)_1",
+      "topic": "Deterrent Control (Login Banner)",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "An organization displays a warning banner on every login screen stating that unauthorized access is prohibited and monitored. What category of control is this banner?",
+      "choices": [
+        "Preventive",
+        "Deterrent",
+        "Corrective",
+        "Compensating"
+      ],
+      "correct": 1,
+      "exp": "A warning banner doesn't technically stop anyone from logging in, but it discourages an attacker by signaling that access is monitored -- the definition of a deterrent control."
+    },
+    {
+      "id": "deterrent_control_(login_banner)_2",
+      "topic": "Deterrent Control (Login Banner)",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A company posts a notice at every server room entrance stating that the area is under 24/7 surveillance. Since the sign itself doesn't physically stop anyone from entering, what type of control is it?",
+      "choices": [
+        "Detective",
+        "Deterrent",
+        "Directive",
+        "Corrective"
+      ],
+      "correct": 1,
+      "exp": "Signage intended to discourage bad behavior through psychological effect, without physically blocking or actively catching anything, is a deterrent control."
+    },
+    {
+      "id": "journaling_to_prevent_db_corruption_1",
+      "topic": "Journaling to Prevent DB Corruption",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A DBA wants to minimize the risk of a corrupted database if the server loses power mid-transaction. Which technique best protects against this?",
+      "choices": [
+        "Full-disk encryption",
+        "Off-site backup copies",
+        "Journaling changes before committing them",
+        "Data replication to a secondary site"
+      ],
+      "correct": 2,
+      "exp": "Journaling writes pending changes to a log before applying them to the database, so an interrupted write can be replayed or rolled back cleanly instead of leaving the database in a corrupted state."
+    },
+    {
+      "id": "journaling_to_prevent_db_corruption_2",
+      "topic": "Journaling to Prevent DB Corruption",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Why would a database administrator enable write-ahead journaling specifically to guard against sudden power loss?",
+      "choices": [
+        "It encrypts data so power loss can't expose it",
+        "It records intended changes before they're applied, allowing clean recovery if the write is interrupted",
+        "It automatically copies the database to another region",
+        "It compresses the database to reduce corruption risk"
+      ],
+      "correct": 1,
+      "exp": "Because the intended change is logged first, an interrupted write can be completed or safely discarded on restart, rather than leaving the database in a half-written, corrupted state."
+    },
+    {
+      "id": "automation_use_case:_escalation_1",
+      "topic": "Automation Use Case: Escalation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A help desk wants suspected security incidents to automatically be routed to the appropriate senior analyst the moment certain alert criteria are met, without a technician manually deciding who to notify. What automation use case is this?",
+      "choices": [
+        "Escalation",
+        "Guard rails",
+        "Continuous integration",
+        "Resource provisioning"
+      ],
+      "correct": 0,
+      "exp": "Automatically routing an event to the right responder based on defined criteria is an escalation use case for automation, speeding up response time."
+    },
+    {
+      "id": "automation_use_case:_escalation_2",
+      "topic": "Automation Use Case: Escalation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Which automation use case is illustrated by a SOAR platform automatically assigning a critical alert to an on-call senior engineer and paging them, without any manual triage step?",
+      "choices": [
+        "Continuous integration",
+        "Escalation",
+        "Enabling/disabling services",
+        "Security group management"
+      ],
+      "correct": 1,
+      "exp": "Automatically routing an event up to the appropriate responder based on severity is the definition of an escalation automation use case."
+    },
+    {
+      "id": "hybrid_cloud_complexity_1",
+      "topic": "Hybrid Cloud Complexity",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company splits its workloads between an on-premises data center and a public cloud provider, connecting the two with a dedicated link. What consideration is most commonly associated with this hybrid design?",
+      "choices": [
+        "Outages caused by microservice sprawl",
+        "Native IoT device support",
+        "Mismatched network security controls between environments",
+        "Extra backup requirements for container images"
+      ],
+      "correct": 2,
+      "exp": "Hybrid cloud environments often struggle to keep security policy, segmentation, and controls consistent between the on-premises side and the cloud side, adding real architectural complexity."
+    },
+    {
+      "id": "hybrid_cloud_complexity_2",
+      "topic": "Hybrid Cloud Complexity",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Which challenge is most frequently cited as a downside of running a hybrid cloud architecture compared to staying fully on-premises or fully in the cloud?",
+      "choices": [
+        "Inconsistent security controls and policy enforcement across the two environments",
+        "Guaranteed higher latency in all cases",
+        "Complete loss of encryption capability",
+        "Inability to use any firewall at all"
+      ],
+      "correct": 0,
+      "exp": "Keeping security posture consistent across two fundamentally different environments (on-prem and cloud) is one of the most commonly cited hybrid cloud challenges."
+    },
+    {
+      "id": "backout_plan_execution_after_failed_patch_1",
+      "topic": "Backout Plan Execution After Failed Patch",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "During a scheduled maintenance window, a technician patches and reboots the first of fifty web servers, and the web service crashes with a critical error. What should the technician do next?",
+      "choices": [
+        "Immediately notify stakeholders about the outage",
+        "Execute the documented backout plan to revert the change",
+        "Try reproducing the issue in a lab environment first",
+        "Re-read the change's impact analysis"
+      ],
+      "correct": 1,
+      "exp": "Once a change causes a failure, the immediate next step is following the pre-approved backout plan to restore service -- notification and root-cause analysis come after service is stable again."
+    },
+    {
+      "id": "backout_plan_execution_after_failed_patch_2",
+      "topic": "Backout Plan Execution After Failed Patch",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A planned configuration change causes an unexpected service outage right after deployment. What is the correct immediate response, assuming a formal change process was followed?",
+      "choices": [
+        "Roll back using the previously documented backout procedure",
+        "Schedule a new maintenance window for next week",
+        "Escalate directly to the change advisory board before doing anything else",
+        "Begin a full root cause analysis before restoring service"
+      ],
+      "correct": 0,
+      "exp": "Restoring service via the pre-approved backout plan takes priority over analysis or escalation when a change has already caused a live outage."
+    },
+    {
+      "id": "incident_response_recovery_phase_1",
+      "topic": "Incident Response Recovery Phase",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "After removing malware from an infected workstation, an administrator re-images the machine's operating system back to a known-clean baseline before returning it to the user. Which incident response phase does this represent?",
+      "choices": [
+        "Lessons learned",
+        "Recovery",
+        "Detection",
+        "Containment"
+      ],
+      "correct": 1,
+      "exp": "Restoring an affected system to a known-good operational state is the recovery phase of incident response, coming after containment and eradication."
+    },
+    {
+      "id": "incident_response_recovery_phase_2",
+      "topic": "Incident Response Recovery Phase",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Once a compromised server has been isolated and the malicious code removed, the team rebuilds it from a trusted image and brings it back into production. What incident response phase is this?",
+      "choices": [
+        "Containment",
+        "Recovery",
+        "Preparation",
+        "Detection"
+      ],
+      "correct": 1,
+      "exp": "Rebuilding and restoring a system to normal operation after an incident is the recovery phase, distinct from the earlier containment and eradication steps."
+    },
+    {
+      "id": "blockchain_for_asset_parts_tracking_1",
+      "topic": "Blockchain for Asset/Parts Tracking",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A manufacturer wants an immutable, shared record that all its suppliers and assembly partners can trust to track a part's progress through the production line, without relying on any single company's database. What technology fits best?",
+      "choices": [
+        "A secure enclave",
+        "Blockchain",
+        "Hashing alone",
+        "Asymmetric encryption alone"
+      ],
+      "correct": 1,
+      "exp": "A blockchain's distributed, tamper-evident ledger lets multiple untrusting parties share a single trusted record of an asset's history without depending on one central authority's database."
+    },
+    {
+      "id": "blockchain_for_asset_parts_tracking_2",
+      "topic": "Blockchain for Asset/Parts Tracking",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Several independent companies contributing parts to the same assembly line want a shared, tamper-resistant log of every handoff between them. What technology is best suited to this?",
+      "choices": [
+        "Blockchain",
+        "A secure enclave",
+        "Symmetric encryption",
+        "Tokenization"
+      ],
+      "correct": 0,
+      "exp": "Blockchain provides a shared, distributed ledger that multiple independent parties can trust without a single company controlling the record."
+    },
+    {
+      "id": "biometric_for_physical-presence_authentication_1",
+      "topic": "Biometric for Physical-Presence Authentication",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A company's policy states that a specific server can only be logged into by someone physically present in the same building. Which authentication method best enforces this requirement?",
+      "choices": [
+        "A USB security key",
+        "A biometric scanner",
+        "A numeric PIN",
+        "An SMS one-time code"
+      ],
+      "correct": 1,
+      "exp": "A biometric scanner requires the actual physical person to be present at the device -- unlike a USB key, PIN, or SMS code, all of which could theoretically be used or relayed by someone who isn't physically there."
+    },
+    {
+      "id": "biometric_for_physical-presence_authentication_2",
+      "topic": "Biometric for Physical-Presence Authentication",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Which authentication factor is uniquely tied to the person being physically present at the point of authentication, rather than something that could be handed off or relayed remotely?",
+      "choices": [
+        "A one-time SMS passcode",
+        "A shared PIN",
+        "A fingerprint or iris scan",
+        "A hardware token that could be mailed to someone else"
+      ],
+      "correct": 2,
+      "exp": "Biometrics require the actual physical body part of the enrolled person at the scanner, making them the strongest guarantee of physical presence among the options."
+    },
+    {
+      "id": "cloud_responsibility_matrix_(public_cloud)_1",
+      "topic": "Cloud Responsibility Matrix (Public Cloud)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "A startup is deploying its first application in a public cloud environment and wants clarity on exactly which security tasks the cloud provider handles versus which ones the startup must handle itself. What document should they consult?",
+      "choices": [
+        "An incident response playbook",
+        "Minutes from the audit committee",
+        "The cloud provider's responsibility matrix",
+        "A right-to-audit clause"
+      ],
+      "correct": 2,
+      "exp": "A responsibility (shared responsibility) matrix explicitly maps out which security duties belong to the cloud provider and which remain the customer's, avoiding dangerous assumptions on either side."
+    },
+    {
+      "id": "cloud_responsibility_matrix_(public_cloud)_2",
+      "topic": "Cloud Responsibility Matrix (Public Cloud)",
+      "domain": "5.0 Security Program Management",
+      "type": "single",
+      "q": "Which reference document tells a company exactly which data-security obligations it retains itself after moving a workload into a public cloud provider's infrastructure?",
+      "choices": [
+        "A responsibility matrix",
+        "A statement of work",
+        "A memorandum of understanding",
+        "A non-disclosure agreement"
+      ],
+      "correct": 0,
+      "exp": "The shared responsibility matrix is specifically designed to delineate the split between provider-owned and customer-owned security tasks in a cloud deployment."
+    },
+    {
+      "id": "asset_enumeration_during_decommissioning_1",
+      "topic": "Asset Enumeration During Decommissioning",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "When retiring an old server, IT records the exact drive capacity, installed RAM, and any add-in cards before disposal. What is this inventory-recording step called?",
+      "choices": [
+        "Destruction",
+        "Sanitization",
+        "Certification",
+        "Enumeration"
+      ],
+      "correct": 3,
+      "exp": "Enumeration is the process of cataloging a device's components and specifications, often done as part of asset tracking before the device is sanitized or destroyed."
+    },
+    {
+      "id": "asset_enumeration_during_decommissioning_2",
+      "topic": "Asset Enumeration During Decommissioning",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "Before wiping and disposing of a decommissioned laptop, a technician logs its storage size, memory configuration, and any expansion hardware installed. What step in the disposal process is this?",
+      "choices": [
+        "Certification",
+        "Enumeration",
+        "Destruction",
+        "Legal hold"
+      ],
+      "correct": 1,
+      "exp": "Recording a device's components and configuration for the asset record is enumeration, distinct from the later sanitization/destruction and certification-of-destruction steps."
+    },
+    {
+      "id": "api_input_buffer_overflow_1",
+      "topic": "API Input Buffer Overflow",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "An attacker sends far more data than an API endpoint expects in a single request, and the excess data overwrites adjacent memory, resulting in arbitrary code execution. What type of attack is this?",
+      "choices": [
+        "A buffer overflow",
+        "A replay attack",
+        "Cross-site scripting",
+        "A DDoS attack"
+      ],
+      "correct": 0,
+      "exp": "Sending more input than an application allocated memory for, causing adjacent memory to be overwritten and potentially executed, is the definition of a buffer overflow attack."
+    },
+    {
+      "id": "api_input_buffer_overflow_2",
+      "topic": "API Input Buffer Overflow",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A vulnerable API accepts an oversized payload in a single call, and the excess bytes spill into adjacent memory space, letting the attacker run their own code. What vulnerability class does this describe?",
+      "choices": [
+        "Buffer overflow",
+        "Directory traversal",
+        "SSRF",
+        "Credential replay"
+      ],
+      "correct": 0,
+      "exp": "Overflowing an allocated memory buffer with excess input, corrupting adjacent memory, is a classic buffer overflow -- one of the oldest and still-relevant memory corruption vulnerability classes."
+    },
+    {
+      "id": "key_escrow_key_selection_1",
+      "topic": "Key Escrow Key Selection",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A company wants to enable key escrow so encrypted files on a central server can still be recovered even if an employee is unavailable. Which key should actually be placed into escrow?",
+      "choices": [
+        "Each user's private key",
+        "The certificate authority's root key",
+        "A temporary session key",
+        "Each user's public key"
+      ],
+      "correct": 0,
+      "exp": "Recovery requires the ability to decrypt, which depends on the private key -- public keys are already freely available and don't need to be escrowed, since they can't decrypt anything on their own."
+    },
+    {
+      "id": "key_escrow_key_selection_2",
+      "topic": "Key Escrow Key Selection",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "For a key escrow program to actually allow recovery of an employee's encrypted files, which type of key must the organization hold a copy of?",
+      "choices": [
+        "The employee's private key",
+        "The employee's public key only",
+        "A one-time session key that already expired",
+        "The CA's public certificate"
+      ],
+      "correct": 0,
+      "exp": "Only the private key can decrypt data protected with the corresponding public key, so escrow is only useful if it captures the private key specifically."
+    },
+    {
+      "id": "host-based_firewall_threat_mitigation_1",
+      "topic": "Host-Based Firewall Threat Mitigation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "A company enables host-based firewalls on every laptop and desktop in the organization. Which threat vector does this specifically help address?",
+      "choices": [
+        "Default credentials left on network devices",
+        "Voice-based social engineering (vishing)",
+        "Malicious instant-messaging traffic reaching individual hosts",
+        "On-path attacks against encrypted VPN tunnels"
+      ],
+      "correct": 2,
+      "exp": "Host-based firewalls filter traffic at the individual device level, which helps block malicious connections coming through channels like instant messaging clients directly on that host."
+    },
+    {
+      "id": "host-based_firewall_threat_mitigation_2",
+      "topic": "Host-Based Firewall Threat Mitigation",
+      "domain": "4.0 Security Operations",
+      "type": "single",
+      "q": "What is a direct benefit of deploying host-based firewalls across every endpoint, compared to relying solely on a perimeter firewall?",
+      "choices": [
+        "It filters malicious traffic (such as from messaging applications) at the individual device level, even for threats that never cross the network perimeter",
+        "It eliminates the need for antivirus software",
+        "It automatically patches operating system vulnerabilities",
+        "It replaces the need for user authentication"
+      ],
+      "correct": 0,
+      "exp": "A host-based firewall protects each device individually, catching malicious traffic that might originate or terminate locally and never actually cross the network perimeter firewall."
+    },
+    {
+      "id": "vlan_segmentation_without_additional_hardware_1",
+      "topic": "VLAN Segmentation Without Additional Hardware",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A factory wants to isolate its manufacturing floor network from the corporate network, but both currently share the same physical switch and the company doesn't want to buy new equipment. What's the best way to achieve this segmentation?",
+      "choices": [
+        "Connect the two networks with a VPN tunnel",
+        "Physically air-gap the manufacturing floor",
+        "Deploy host-based firewalls on every device",
+        "Configure separate VLANs for each network"
+      ],
+      "correct": 3,
+      "exp": "VLANs let a single physical switch logically separate traffic into isolated broadcast domains without requiring any additional hardware -- exactly what's needed when a new switch isn't an option."
+    },
+    {
+      "id": "vlan_segmentation_without_additional_hardware_2",
+      "topic": "VLAN Segmentation Without Additional Hardware",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "An organization needs to logically separate guest Wi-Fi traffic from internal corporate traffic on the same physical switching infrastructure, without purchasing new switches. What's the most appropriate solution?",
+      "choices": [
+        "Creating separate VLANs for guest and corporate traffic",
+        "Building a fully air-gapped guest network",
+        "Installing a host-based firewall on the switch",
+        "Running a site-to-site VPN between the two segments"
+      ],
+      "correct": 0,
+      "exp": "VLANs provide logical network segmentation on existing switch hardware, avoiding the cost and complexity of physical separation or additional equipment."
+    },
+    {
+      "id": "sase_for_remote_mobile_access_1",
+      "topic": "SASE for Remote Mobile Access",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "An organization is rolling out a cloud-based application for field technicians who need secure access from constantly changing locations on their mobile devices. Which architecture is best suited to this remote access need?",
+      "choices": [
+        "RTOS",
+        "A CRL",
+        "A traditional zero-trust network only",
+        "SASE"
+      ],
+      "correct": 3,
+      "exp": "SASE combines networking and security services (including secure remote access) delivered from the cloud, making it well suited for a distributed mobile workforce connecting from anywhere."
+    },
+    {
+      "id": "sase_for_remote_mobile_access_2",
+      "topic": "SASE for Remote Mobile Access",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company wants to give mobile field technicians secure, policy-enforced access to a cloud application without backhauling their traffic through a central data center first. What architecture fits this need best?",
+      "choices": [
+        "SASE",
+        "RTOS",
+        "A basic CRL-based revocation system",
+        "A single on-premises VPN concentrator"
+      ],
+      "correct": 0,
+      "exp": "SASE delivers security and connectivity from the cloud edge closest to the user, avoiding the latency and complexity of routing mobile traffic back through a central office first."
+    },
+    {
+      "id": "digital_signatures_and_certificate_trust_1",
+      "topic": "Digital Signatures and Certificate Trust",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Which cryptographic mechanism is used to establish that a digital certificate can be trusted and hasn't been tampered with?",
+      "choices": [
+        "Steganography",
+        "A simple hash alone",
+        "Symmetric encryption",
+        "A digital signature"
+      ],
+      "correct": 3,
+      "exp": "A digital signature, created by a certificate authority signing the certificate with its private key, is what lets relying parties verify authenticity and integrity -- a hash alone doesn't prove who created it."
+    },
+    {
+      "id": "digital_signatures_and_certificate_trust_2",
+      "topic": "Digital Signatures and Certificate Trust",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "What cryptographic technique allows a browser to trust that a certificate genuinely came from the certificate authority it claims to, rather than being forged?",
+      "choices": [
+        "The CA's digital signature on the certificate",
+        "Symmetric key encryption of the certificate",
+        "Steganographic embedding within the certificate",
+        "A simple checksum of the certificate fields"
+      ],
+      "correct": 0,
+      "exp": "The CA signs the certificate with its own private key; anyone can verify that signature with the CA's public key, confirming authenticity and integrity."
+    },
+    {
+      "id": "hsm_for_centralized_private_key_storage_1",
+      "topic": "HSM for Centralized Private Key Storage",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "A company wants to consolidate and protect the private keys used across all of its web servers in one secure, tamper-resistant location. What's the best solution?",
+      "choices": [
+        "Integrate a hardware security module (HSM)",
+        "Enable full-disk encryption on each web server individually",
+        "Rely on each server's built-in TPM",
+        "Upgrade every server to UEFI firmware"
+      ],
+      "correct": 0,
+      "exp": "An HSM is purpose-built for centralized, tamper-resistant storage and management of cryptographic keys across many systems, unlike per-device solutions like TPM or disk encryption."
+    },
+    {
+      "id": "hsm_for_centralized_private_key_storage_2",
+      "topic": "HSM for Centralized Private Key Storage",
+      "domain": "1.0 General Security Concepts",
+      "type": "single",
+      "q": "Which solution provides centralized, hardware-backed protection for private keys shared across an entire fleet of web servers, rather than protecting keys on a single device at a time?",
+      "choices": [
+        "A hardware security module (HSM)",
+        "A per-server TPM chip",
+        "Per-server full-disk encryption",
+        "Per-server UEFI secure boot"
+      ],
+      "correct": 0,
+      "exp": "TPM, disk encryption, and UEFI secure boot all protect an individual device; an HSM is specifically designed to centrally serve and protect keys for many systems at once."
+    },
+    {
+      "id": "keylogger_beaconing_behavior_1",
+      "topic": "Keylogger Beaconing Behavior",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "A security analyst notices several workstations making brief, irregular outbound connections to the same external IP address at random times throughout the day. What is the most likely explanation?",
+      "choices": [
+        "An on-path attack",
+        "A keylogger periodically exfiltrating captured keystrokes",
+        "A replay attack",
+        "A brute-force login attempt"
+      ],
+      "correct": 1,
+      "exp": "Keyloggers often batch captured keystrokes and send them to a command-and-control server at irregular intervals, producing exactly this kind of intermittent, low-volume beaconing pattern."
+    },
+    {
+      "id": "keylogger_beaconing_behavior_2",
+      "topic": "Keylogger Beaconing Behavior",
+      "domain": "2.0 Threats, Vulnerabilities & Mitigations",
+      "type": "single",
+      "q": "Multiple internal hosts are observed sending small amounts of data to the same external address at unpredictable times, with no obvious user-initiated activity. What threat does this pattern most strongly suggest?",
+      "choices": [
+        "A keylogger periodically phoning home with captured data",
+        "A DDoS attack originating from those hosts",
+        "A legitimate software update check",
+        "A misconfigured DNS server"
+      ],
+      "correct": 0,
+      "exp": "Small, irregular, unexplained outbound transmissions to a single external destination are a classic indicator of keylogger or spyware beaconing back to its operator."
+    },
+    {
+      "id": "spf_record_purpose_1",
+      "topic": "SPF Record Purpose",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A DNS administrator publishes an SPF record for the company's domain. What is this record's purpose?",
+      "choices": [
+        "Encrypting all outbound email in transit",
+        "Listing which mail servers are authorized to send email for the domain",
+        "Digitally signing every outgoing email",
+        "Defining how spam-flagged mail should be handled"
+      ],
+      "correct": 1,
+      "exp": "SPF (Sender Policy Framework) publishes the list of servers authorized to send mail on behalf of a domain, letting recipients detect spoofed senders."
+    },
+    {
+      "id": "spf_record_purpose_2",
+      "topic": "SPF Record Purpose",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Why would an organization configure an SPF TXT record in its public DNS zone?",
+      "choices": [
+        "To declare which outbound mail servers are legitimately allowed to send email for its domain",
+        "To force all inbound email to use TLS encryption",
+        "To cryptographically sign the body of every email",
+        "To specify the retention period for archived email"
+      ],
+      "correct": 0,
+      "exp": "SPF exists specifically to let receiving mail servers verify that an email actually originated from a server the domain owner authorized, reducing spoofing."
+    },
+    {
+      "id": "containerization_vs_virtual_machines_1",
+      "topic": "Containerization vs Virtual Machines",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "A company wants to deploy several isolated applications on one host without the overhead of running a separate full virtual machine for each one. What approach fits best?",
+      "choices": [
+        "Containerization",
+        "Deploying a dedicated IoT gateway",
+        "Using a reverse proxy",
+        "Building a custom RTOS"
+      ],
+      "correct": 0,
+      "exp": "Containers share a single underlying OS/VM while isolating applications from each other, avoiding the resource overhead of running a full separate VM per application."
+    },
+    {
+      "id": "containerization_vs_virtual_machines_2",
+      "topic": "Containerization vs Virtual Machines",
+      "domain": "3.0 Security Architecture",
+      "type": "single",
+      "q": "Why might a DevOps team choose containers over spinning up a new virtual machine for every microservice they deploy?",
+      "choices": [
+        "Containers share the host OS and are far lighter-weight than a full VM per service",
+        "Containers provide stronger isolation than VMs in every scenario",
+        "VMs cannot run more than one application at all",
+        "Containers eliminate the need for any security controls"
+      ],
+      "correct": 0,
+      "exp": "Because containers share the underlying OS kernel rather than virtualizing an entire OS per instance, they're significantly lighter and faster to spin up than one VM per application."
     }
   ],
   "pbq": [
