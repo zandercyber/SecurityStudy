@@ -44,7 +44,6 @@ function updateStartScreen() {
 }
 
 function boot() {
-  if (!requireAuth()) return;
   renderSidebar('review');
   enableKeyboardShortcuts();
 
@@ -67,4 +66,4 @@ function boot() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', boot);
+window.onAuthReady(boot);

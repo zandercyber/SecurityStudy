@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 const QUESTIONS_PATH = path.join(__dirname, '..', 'data', 'questions.json');
 const FLASHCARDS_PATH = path.join(__dirname, '..', 'data', 'flashcards.json');
 
-app.get('/api/questions', (req, res) => {
+app.get('/api/questions', auth.authMiddleware, (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync(QUESTIONS_PATH, 'utf8'));
     res.json(data);
@@ -22,7 +22,7 @@ app.get('/api/questions', (req, res) => {
   }
 });
 
-app.get('/api/flashcards', (req, res) => {
+app.get('/api/flashcards', auth.authMiddleware, (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync(FLASHCARDS_PATH, 'utf8'));
     res.json(data);
@@ -56,6 +56,10 @@ app.post('/api/logout', auth.authMiddleware, (req, res) => {
 
 app.get('/api/me', auth.authMiddleware, (req, res) => {
   res.json({ username: req.username });
+});
+
+app.get('/api/auth/verify', auth.authMiddleware, (req, res) => {
+  res.json({ valid: true, username: req.username });
 });
 
 app.get('/api/progress', auth.authMiddleware, (req, res) => {

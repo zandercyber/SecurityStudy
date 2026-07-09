@@ -1,7 +1,6 @@
 // ===== Practice page boot =====
 
 function boot() {
-  if (!requireAuth()) return;
   renderSidebar('practice');
   enableKeyboardShortcuts();
 
@@ -25,4 +24,4 @@ function boot() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', boot);
+window.onAuthReady(boot);

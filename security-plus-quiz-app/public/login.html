@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — Security+ Adaptive Quiz</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Hide the page immediately if a token is already present, so a logged-in user doesn't
+  // see the login form flash before login.js confirms the token and redirects to index.html.
+  if (localStorage.getItem('spq_token')) {
+    document.documentElement.style.visibility = 'hidden';
+  }
+</script>
+</head>
+<body>
+<div class="auth-page-shell">
+  <div class="auth-page-inner">
+    <div class="auth-page-brand"><span class="brand-mark">&#9635;</span><span class="brand-name">SEC+ OPS</span></div>
+    <p class="auth-page-tagline">Adaptive practice console for the CompTIA Security+ (SY0-701) exam.</p>
+
+    <div class="card">
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Log in</button>
+        <button id="tabRegister" class="tab">Create account</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label>Username
+          <input type="text" id="loginUsername" autocomplete="username" required>
+        </label>
+        <label>Password
+          <input type="password" id="loginPassword" autocomplete="current-password" required>
+        </label>
+        <div id="loginError" class="error-text hidden"></div>
+        <button type="submit">Log in</button>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden">
+        <label>Choose a username
+          <input type="text" id="regUsername" autocomplete="username" required>
+        </label>
+        <label>Choose a password (6+ characters)
+          <input type="password" id="regPassword" autocomplete="new-password" required>
+        </label>
+        <div id="registerError" class="error-text hidden"></div>
+        <button type="submit">Create account</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

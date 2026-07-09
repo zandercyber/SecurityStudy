@@ -119,7 +119,6 @@ function handleFlashcardKeys(e) {
 }
 
 function boot() {
-  if (!requireAuth()) return;
   renderSidebar('flashcards');
 
   Promise.all([loadQuestions(), loadFlashcards(), loadProgress()]).then(function() {
@@ -147,4 +146,4 @@ function boot() {
   document.addEventListener('keydown', handleFlashcardKeys);
 }
 
-document.addEventListener('DOMContentLoaded', boot);
+window.onAuthReady(boot);

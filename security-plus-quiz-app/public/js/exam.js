@@ -200,7 +200,6 @@ function returnToExamMenu() {
 }
 
 function boot() {
-  if (!requireAuth()) return;
   renderSidebar('exam');
   enableKeyboardShortcuts();
 
@@ -218,4 +217,4 @@ function boot() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', boot);
+window.onAuthReady(boot);

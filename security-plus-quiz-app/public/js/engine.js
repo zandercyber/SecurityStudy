@@ -5,6 +5,7 @@ function renderRegular(q) {
   current = q;
   currentKind = 'regular';
   lastQuestionId = q.id;
+  recordRecentQuestion(q.id);
 
   var order = shuffleArray(q.choices.map(function(_, i) { return i; }));
   shuffleMap = order;

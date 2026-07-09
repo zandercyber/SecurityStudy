@@ -17,14 +17,15 @@ function clearSession() {
   localStorage.removeItem(USERNAME_KEY);
 }
 
-// Redirects to Home if there's no session token. Returns false when redirecting
-// so callers can bail out of their boot sequence immediately.
-function requireAuth() {
-  if (!isLoggedIn()) {
-    window.location.href = 'index.html';
-    return false;
-  }
-  return true;
+// Kicked in by api() whenever the server rejects a request with 401 — the token in storage
+// is missing/expired/tampered, so the client-side session is no longer trustworthy.
+// Returns true if we're already on login.html (so the caller should handle the rejection
+// itself, e.g. to reveal the form) rather than us navigating away again.
+function handleUnauthorized() {
+  clearSession();
+  var onLoginPage = /(^|\/)login\.html$/.test(window.location.pathname);
+  if (!onLoginPage) window.location.href = 'login.html';
+  return onLoginPage;
 }
 
 function api(path, opts) {
@@ -38,6 +39,10 @@ function api(path, opts) {
     headers: headers,
     body: opts.body ? JSON.stringify(opts.body) : undefined
   }).then(function(res) {
+    if (res.status === 401) {
+      var onLoginPage = handleUnauthorized();
+      if (!onLoginPage) return new Promise(function() {}); // navigating away; never resolve to callers
+    }
     return res.json().then(function(data) {
       if (!res.ok) throw new Error(data.error || 'Request failed');
       return data;
@@ -48,5 +53,5 @@ function api(path, opts) {
 function logoutAndRedirect() {
   api('/api/logout', { method: 'POST' }).catch(function() {});
   clearSession();
-  window.location.href = 'index.html';
+  window.location.href = 'login.html';
 }

@@ -15,6 +15,7 @@ var correctCount = 0;
 var currentStreak = 0;
 var lastQuestionId = null;
 var lastPbqId = null;
+var recentQuestionIds = []; // FIFO of the last RECENT_HISTORY_SIZE question IDs served (regular + PBQ), per user
 var current = null;
 var currentKind = null;
 var shuffleMap = null;
@@ -59,6 +60,7 @@ function initFreshState() {
   currentStreak = 0;
   lastQuestionId = null;
   lastPbqId = null;
+  recentQuestionIds = [];
   missedQuestionIds = [];
   accuracyTrend = [];
   examHistory = [];
@@ -87,6 +89,7 @@ function restoreState(saved) {
   currentStreak = saved.currentStreak || 0;
   lastQuestionId = saved.lastQuestionId || null;
   lastPbqId = saved.lastPbqId || null;
+  recentQuestionIds = saved.recentQuestionIds || [];
   missedQuestionIds = saved.missedQuestionIds || [];
   accuracyTrend = saved.accuracyTrend || [];
   examHistory = saved.examHistory || [];
@@ -105,6 +108,7 @@ function snapshotState() {
     currentStreak: currentStreak,
     lastQuestionId: lastQuestionId,
     lastPbqId: lastPbqId,
+    recentQuestionIds: recentQuestionIds.slice(-RECENT_HISTORY_SIZE),
     missedQuestionIds: missedQuestionIds,
     accuracyTrend: accuracyTrend,
     examHistory: examHistory,
@@ -159,6 +163,9 @@ function updateAccuracyTrend() {
 }
 
 // ---------------- Weighted selection ----------------
+var RECENT_HISTORY_SIZE = 18; // rolling window of recently-served question IDs (regular + PBQ), per user
+var MIN_CANDIDATE_POOL = 3;   // if an exclusion step would leave fewer candidates than this, relax it instead
+
 function shuffleArray(arr) {
   var a = arr.slice();
   for (var i = a.length - 1; i > 0; i--) {
@@ -168,7 +175,28 @@ function shuffleArray(arr) {
   return a;
 }
 
-function pickWeighted(pool, lastId) {
+// Records that a question was just served, for the recency-exclusion window in pickWeighted.
+function recordRecentQuestion(id) {
+  if (id == null) return;
+  var idx = recentQuestionIds.indexOf(id);
+  if (idx !== -1) recentQuestionIds.splice(idx, 1);
+  recentQuestionIds.push(id);
+  if (recentQuestionIds.length > RECENT_HISTORY_SIZE) {
+    recentQuestionIds.splice(0, recentQuestionIds.length - RECENT_HISTORY_SIZE);
+  }
+}
+
+function findQuestionById(id) {
+  for (var i = 0; i < REGULAR_QUESTIONS.length; i++) {
+    if (REGULAR_QUESTIONS[i].id === id) return REGULAR_QUESTIONS[i];
+  }
+  for (var j = 0; j < PBQ_QUESTIONS.length; j++) {
+    if (PBQ_QUESTIONS[j].id === id) return PBQ_QUESTIONS[j];
+  }
+  return null;
+}
+
+function weightedDraw(pool, lastId) {
   var withWeights = pool.map(function(q) {
     var w = weights[q.topic] || 1;
     if (q.id === lastId) w *= 0.15;
@@ -181,6 +209,36 @@ function pickWeighted(pool, lastId) {
     r -= withWeights[i].w;
   }
   return withWeights[withWeights.length - 1].q;
+}
+
+// Picks the next question from `pool` using the existing topic-weight random draw, but first
+// excludes anything served too recently so the same question/topic can't resurface a few
+// questions later. Exclusion is relaxed (topic-level first, then question-ID level) whenever
+// a narrow pool (e.g. Focus Mode with 1-2 topics) would otherwise leave too few candidates.
+function pickWeighted(pool, lastId) {
+  var idExcluded = pool.filter(function(q) {
+    return recentQuestionIds.indexOf(q.id) === -1;
+  });
+
+  var recentTopics = {};
+  recentQuestionIds.forEach(function(id) {
+    var rq = findQuestionById(id);
+    if (rq) recentTopics[rq.topic] = true;
+  });
+  var topicAndIdExcluded = idExcluded.filter(function(q) {
+    return !recentTopics[q.topic];
+  });
+
+  var candidates;
+  if (topicAndIdExcluded.length >= MIN_CANDIDATE_POOL) {
+    candidates = topicAndIdExcluded;       // strictest: no recent question, no recent topic
+  } else if (idExcluded.length >= MIN_CANDIDATE_POOL) {
+    candidates = idExcluded;               // relax topic exclusion, keep question-ID exclusion
+  } else {
+    candidates = pool;                     // relax everything (e.g. narrow Focus Mode pool)
+  }
+
+  return weightedDraw(candidates, lastId);
 }
 
 // ---------------- Shared scoring ----------------

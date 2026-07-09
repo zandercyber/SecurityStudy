@@ -43,7 +43,6 @@ function exitToPicker() {
 }
 
 function boot() {
-  if (!requireAuth()) return;
   renderSidebar('focus');
   enableKeyboardShortcuts();
 
@@ -63,4 +62,4 @@ function boot() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', boot);
+window.onAuthReady(boot);

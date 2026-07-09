@@ -77,7 +77,6 @@ function confirmResetProgress() {
 }
 
 function boot() {
-  if (!requireAuth()) return;
   renderSidebar('stats');
 
   Promise.all([loadQuestions(), loadProgress()]).then(renderStatsContent);
@@ -85,4 +84,4 @@ function boot() {
   document.getElementById('resetBtn').addEventListener('click', confirmResetProgress);
 }
 
-document.addEventListener('DOMContentLoaded', boot);
+window.onAuthReady(boot);

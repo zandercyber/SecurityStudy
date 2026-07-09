@@ -25,7 +25,7 @@ function renderSidebar(activePage) {
   var footerHtml = loggedIn
     ? '<div class="sidebar-username">' + escapeHtml(getUsername()) + '</div>' +
       '<button id="sidebarLogoutBtn" class="sidebar-logout">Log out</button>'
-    : '<a class="sidebar-login-link" href="index.html">Log in</a>';
+    : '<a class="sidebar-login-link" href="login.html">Log in</a>';
 
   el.innerHTML =
     '<div class="sidebar-brand"><span class="brand-mark">&#9635;</span><span class="brand-name">SEC+ OPS</span></div>' +

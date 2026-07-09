@@ -7,6 +7,7 @@ function renderPBQ(q) {
   current = q;
   currentKind = 'pbq';
   lastPbqId = q.id;
+  recordRecentQuestion(q.id);
   slotAssignments = {};
   selectedTerm = null;
 
