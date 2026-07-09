@@ -20,6 +20,7 @@ var currentKind = null;
 var shuffleMap = null;
 var slotAssignments = {};
 var selectedTerm = null;
+var strikeSet = {}; // { [dispIdx]: true } - ephemeral process-of-elimination state, per-question, never persisted
 
 // ---- Flashcard self-assessment (persisted to server, separate from adaptive quiz scoring) ----
 var flashcardStats = {}; // { [cardId]: { gotIt, stillLearning } }
@@ -224,4 +225,45 @@ function recordAnswer(isCorrect) {
   updateAccuracyTrend();
   if (typeof renderStatbar === 'function') renderStatbar();
   saveProgress();
+}
+
+// ---------------- Shared regular-choice rendering (practice/focus/review/exam) ----------------
+// Process-of-elimination strikethrough is a scratch-pad aid only: never persisted, reset per question.
+function buildChoicesHtml(q, order, isMulti) {
+  return order.map(function(origIdx, dispIdx) {
+    return '<label class="choice" data-disp="' + dispIdx + '">' +
+      '<input type="' + (isMulti ? 'checkbox' : 'radio') + '" name="choice" value="' + dispIdx + '">' +
+      '<span class="choice-text">' + String.fromCharCode(65 + dispIdx) + '. ' + q.choices[origIdx] + '</span>' +
+      '<button type="button" class="strike-btn" data-strike-disp="' + dispIdx + '" ' +
+      'title="Cross out this choice" aria-label="Cross out this choice" aria-pressed="false">&#10005;</button>' +
+      '</label>';
+  }).join('');
+}
+
+function resetStrikeState() {
+  strikeSet = {};
+}
+
+function toggleStrike(dispIdx) {
+  var label = document.querySelector('.choice[data-disp="' + dispIdx + '"]');
+  if (!label) return;
+  var isStruck = !strikeSet[dispIdx];
+  if (isStruck) strikeSet[dispIdx] = true;
+  else delete strikeSet[dispIdx];
+  label.classList.toggle('struck', isStruck);
+  var btn = label.querySelector('.strike-btn');
+  if (btn) {
+    btn.classList.toggle('active', isStruck);
+    btn.setAttribute('aria-pressed', isStruck ? 'true' : 'false');
+  }
+}
+
+function attachStrikeHandlers() {
+  document.querySelectorAll('.strike-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleStrike(parseInt(btn.dataset.strikeDisp, 10));
+    });
+  });
 }

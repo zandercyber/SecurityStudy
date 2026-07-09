@@ -21,6 +21,19 @@ function handleKeyDown(e) {
     return;
   }
 
+  if (e.shiftKey) {
+    var digitMatch = /^Digit([1-9])$/.exec(e.code);
+    if (digitMatch) {
+      var strikeIdx = parseInt(digitMatch[1], 10) - 1;
+      var choiceLabels = document.querySelectorAll('.choice');
+      if (strikeIdx < choiceLabels.length) {
+        e.preventDefault();
+        toggleStrike(strikeIdx);
+      }
+    }
+    return;
+  }
+
   var choiceIndex = -1;
   var k = e.key;
   if (k >= '1' && k <= '5') {

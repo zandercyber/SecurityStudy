@@ -66,13 +66,9 @@ function renderExamQuestion(q) {
   var order = shuffleArray(q.choices.map(function(_, i) { return i; }));
   shuffleMap = order;
   var isMulti = q.type === 'multi';
+  resetStrikeState();
 
-  var choicesHtml = order.map(function(origIdx, dispIdx) {
-    return '<label class="choice" data-disp="' + dispIdx + '">' +
-      '<input type="' + (isMulti ? 'checkbox' : 'radio') + '" name="choice" value="' + dispIdx + '">' +
-      '<span>' + String.fromCharCode(65 + dispIdx) + '. ' + q.choices[origIdx] + '</span>' +
-      '</label>';
-  }).join('');
+  var choicesHtml = buildChoicesHtml(q, order, isMulti);
 
   var typeHint = isMulti ? '<div class="type-hint">Select TWO answers</div>' : '';
 
@@ -91,6 +87,7 @@ function renderExamQuestion(q) {
       document.getElementById('submitBtn').disabled = false;
     });
   });
+  attachStrikeHandlers();
   document.getElementById('submitBtn').addEventListener('click', submitExamAnswer);
 }
 
