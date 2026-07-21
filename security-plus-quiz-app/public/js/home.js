@@ -16,7 +16,7 @@ function showDashboard() {
     var badge = document.getElementById('dashMissedBadge');
     if (badge) badge.textContent = missedQuestionIds.length > 0 ? '(' + missedQuestionIds.length + ')' : '';
 
-    document.getElementById('dashChartWrap').innerHTML = renderAccuracyChart(accuracyTrend, { title: 'Accuracy trend', height: 100 });
+    document.getElementById('dashChartWrap').innerHTML = renderAccuracyChart(answerHistory, { title: 'Accuracy trend', height: 84 });
   });
 }
 

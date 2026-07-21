@@ -99,7 +99,7 @@ The "Reset all progress…" button on `stats.html` (confirmation required) calls
 
 ## Accuracy trend chart
 
-Every time a question is answered in practice, focus, or review mode, a `{n, acc}` point is appended to `accuracyTrend` (rolling accuracy = correct / total so far). The array is downsampled to ≤ 200 points by discarding every other older interior point when it grows beyond that limit, keeping the first and last points intact. The chart renders as a responsive inline SVG (`charts.js`), reused at three sizes: the readiness report, the Stats page, and a small preview on the Home dashboard.
+`renderAccuracyChart()` (`charts.js`) derives the trend directly from `answerHistory` (capped to the last 200 answers) rather than storing a separate series. Each plotted point is a rolling accuracy over the trailing 10 answers (expanding for the first few points), not lifetime cumulative accuracy — so recent improvement or decline actually shows up as movement instead of flattening out once enough questions have been answered. The y-axis auto-fits to the data's range (snapped to 5%, minimum 10-point span) instead of a fixed 0–100 scale, so real swings aren't compressed into a thin band. The header shows the current rolling accuracy and its change over the last window; a dashed reference line marks 75% when it falls within the visible range. The chart renders as a responsive inline SVG, reused at three sizes: the readiness report, the Stats page, and a small preview on the Home dashboard.
 
 ## Keyboard shortcuts
 
@@ -134,7 +134,6 @@ The POST `/api/progress` body (and GET response's `progress` field) is a flat JS
   "lastQuestionId":     "vpn_types_1",
   "lastPbqId":          "pbq_ports_1",
   "missedQuestionIds":  ["chain_of_custody_1", "..."],
-  "accuracyTrend":      [{ "n": 10, "acc": 70 }, { "n": 20, "acc": 75 }],
   "examHistory":        [{ "date": "...", "score": 72, "total": 90, "pct": 80, "domainBreakdown": { ... }, "reason": "completed" }]
 }
 ```

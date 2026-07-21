@@ -380,8 +380,16 @@ ul.weak li { margin-bottom: 4px; }
   border-radius: 8px; background: var(--panel2); border: 1px solid var(--border);
   padding: 12px 8px 8px; margin: 14px 0;
 }
-.chart-title { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; padding-left: 4px; }
+.chart-title { font-size: 0.78rem; color: var(--muted); }
 .chart-empty { color: var(--muted); font-size: 0.85rem; text-align: center; padding: 16px 0 8px; }
+.chart-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 0 4px; margin-bottom: 6px; gap: 8px;
+}
+.chart-current { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+.chart-current-val { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+.chart-current-delta { font-size: 0.72rem; }
+.chart-foot { font-size: 0.68rem; color: var(--muted); text-align: right; padding: 4px 4px 0; }
 
 /* ---------------- PBQ / Matching styles ---------------- */
 

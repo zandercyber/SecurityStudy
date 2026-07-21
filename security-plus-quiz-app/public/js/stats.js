@@ -54,7 +54,7 @@ function renderStatsContent() {
     '<div class="card report">' +
     '<div class="readiness-badge ' + r.cls + '">' + r.label + '</div>' +
     '<p>Overall accuracy: <strong class="mono">' + overallAcc + '%</strong> (' + correctCount + '/' + questionCount + ' questions) &middot; Current streak: <strong class="mono">' + currentStreak + '</strong> &middot; Missed queue: <strong class="mono">' + missedQuestionIds.length + '</strong></p>' +
-    renderAccuracyChart(accuracyTrend) +
+    renderAccuracyChart(answerHistory) +
     '<div class="section-title">Domain Breakdown</div>' +
     '<table class="domainT"><tr><th>Domain</th><th>Score</th><th>Accuracy</th></tr>' + domainRows + '</table>' +
     '<div class="section-title">Weakest Topics</div>' +

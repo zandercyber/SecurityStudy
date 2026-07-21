@@ -152,7 +152,7 @@ function showReport_fn() {
     .join('');
   var weakHtml = weakList || '<li>No consistently weak topics right now — nice work.</li>';
 
-  var chartHtml = renderAccuracyChart(accuracyTrend);
+  var chartHtml = renderAccuracyChart(answerHistory);
 
   reportArea.innerHTML =
     '<div class="card report">' +

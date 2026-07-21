@@ -27,7 +27,6 @@ var strikeSet = {}; // { [dispIdx]: true } - ephemeral process-of-elimination st
 var flashcardStats = {}; // { [cardId]: { gotIt, stillLearning } }
 
 var missedQuestionIds = []; // IDs of questions ever answered wrong in practice/focus/review
-var accuracyTrend = [];     // [{n, acc}] rolling accuracy snapshots, capped to ~200 points
 var examHistory = [];       // [{date, score, total, pct, domainBreakdown}]
 
 // ---- Session-only state (not persisted) ----
@@ -62,7 +61,6 @@ function initFreshState() {
   lastPbqId = null;
   recentQuestionIds = [];
   missedQuestionIds = [];
-  accuracyTrend = [];
   examHistory = [];
   flashcardStats = {};
 
@@ -91,7 +89,6 @@ function restoreState(saved) {
   lastPbqId = saved.lastPbqId || null;
   recentQuestionIds = saved.recentQuestionIds || [];
   missedQuestionIds = saved.missedQuestionIds || [];
-  accuracyTrend = saved.accuracyTrend || [];
   examHistory = saved.examHistory || [];
   flashcardStats = saved.flashcardStats || {};
 }
@@ -110,7 +107,6 @@ function snapshotState() {
     lastPbqId: lastPbqId,
     recentQuestionIds: recentQuestionIds.slice(-RECENT_HISTORY_SIZE),
     missedQuestionIds: missedQuestionIds,
-    accuracyTrend: accuracyTrend,
     examHistory: examHistory,
     flashcardStats: flashcardStats
   };
@@ -146,20 +142,6 @@ function getMissedPool() {
     pool = pool.filter(function(q) { return focusDomains.indexOf(q.domain) !== -1; });
   }
   return pool;
-}
-
-// ---------------- Accuracy trend ----------------
-function updateAccuracyTrend() {
-  if (questionCount === 0) return;
-  var acc = Math.round(100 * correctCount / questionCount);
-  accuracyTrend.push({ n: questionCount, acc: acc });
-  if (accuracyTrend.length > 200) {
-    // Downsample: keep first, every other interior point, and last
-    var kept = [accuracyTrend[0]];
-    for (var i = 2; i < accuracyTrend.length - 1; i += 2) kept.push(accuracyTrend[i]);
-    kept.push(accuracyTrend[accuracyTrend.length - 1]);
-    accuracyTrend = kept;
-  }
 }
 
 // ---------------- Weighted selection ----------------
@@ -280,7 +262,6 @@ function recordAnswer(isCorrect) {
   }
 
   answerHistory.push({ topic: current.topic, domain: current.domain, correct: isCorrect });
-  updateAccuracyTrend();
   if (typeof renderStatbar === 'function') renderStatbar();
   saveProgress();
 }
