@@ -92,6 +92,11 @@ function nextTurn() {
     return;
   }
 
+  if (currentMode === 'pbq') {
+    renderPBQ(pickWeighted(PBQ_QUESTIONS, lastPbqId));
+    return;
+  }
+
   // Practice / focus mode
   var isPbqTurn = PBQ_QUESTIONS.length > 0 && (questionCount + 1) % 20 === 0;
   if (isPbqTurn) {
