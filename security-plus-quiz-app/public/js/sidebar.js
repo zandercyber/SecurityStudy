@@ -29,7 +29,7 @@ function renderSidebar(activePage) {
     : '<a class="sidebar-login-link" href="login.html">Log in</a>';
 
   el.innerHTML =
-    '<div class="sidebar-brand"><span class="brand-mark">&#9635;</span><span class="brand-name">SEC+ OPS</span></div>' +
+    '<div class="sidebar-brand"><span class="brand-mark">&#9635;</span><span class="brand-name">SEC+ Personal Trainer</span></div>' +
     '<ul class="sidebar-nav">' + navHtml + '</ul>' +
     '<div class="sidebar-footer">' + footerHtml + '</div>';
 

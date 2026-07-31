@@ -13,6 +13,7 @@ var answerHistory = [];
 var questionCount = 0;
 var correctCount = 0;
 var currentStreak = 0;
+var bestStreak = 0; // all-time best currentStreak, cosmetic stat only — never read by weighting logic
 var lastQuestionId = null;
 var lastPbqId = null;
 var recentQuestionIds = []; // FIFO of the last RECENT_HISTORY_SIZE question IDs served (regular + PBQ), per user
@@ -57,6 +58,7 @@ function initFreshState() {
   questionCount = 0;
   correctCount = 0;
   currentStreak = 0;
+  bestStreak = 0;
   lastQuestionId = null;
   lastPbqId = null;
   recentQuestionIds = [];
@@ -85,6 +87,7 @@ function restoreState(saved) {
   questionCount = saved.questionCount || 0;
   correctCount = saved.correctCount || 0;
   currentStreak = saved.currentStreak || 0;
+  bestStreak = saved.bestStreak || 0;
   lastQuestionId = saved.lastQuestionId || null;
   lastPbqId = saved.lastPbqId || null;
   recentQuestionIds = saved.recentQuestionIds || [];
@@ -103,6 +106,7 @@ function snapshotState() {
     questionCount: questionCount,
     correctCount: correctCount,
     currentStreak: currentStreak,
+    bestStreak: bestStreak,
     lastQuestionId: lastQuestionId,
     lastPbqId: lastPbqId,
     recentQuestionIds: recentQuestionIds.slice(-RECENT_HISTORY_SIZE),
@@ -238,6 +242,7 @@ function recordAnswer(isCorrect) {
   if (isCorrect) {
     correctCount++;
     currentStreak++;
+    if (currentStreak > bestStreak) bestStreak = currentStreak;
     if (currentMode !== 'review') {
       // Only touch adaptive weights/streaks in practice/focus mode
       streaks[current.topic] = (streaks[current.topic] || 0) + 1;
@@ -295,6 +300,16 @@ function toggleStrike(dispIdx) {
     btn.classList.toggle('active', isStruck);
     btn.setAttribute('aria-pressed', isStruck ? 'true' : 'false');
   }
+}
+
+// ---------------- Streak flame (cosmetic only — reads currentStreak/bestStreak, writes nothing) ----------------
+// Tiers: 0 none, 1-2 small, 3-5 medium, 6-9 large+flicker, 10+ largest+flicker+numeric badge.
+function flameTierForStreak(streak) {
+  if (streak <= 0) return 0;
+  if (streak <= 2) return 1;
+  if (streak <= 5) return 2;
+  if (streak <= 9) return 3;
+  return 4;
 }
 
 function attachStrikeHandlers() {

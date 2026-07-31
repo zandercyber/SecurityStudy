@@ -10,6 +10,20 @@ function showDashboard() {
     var acc = questionCount ? Math.round(100 * correctCount / questionCount) : 0;
     document.getElementById('dashAccuracy').textContent = questionCount ? acc + '%' : '--';
     document.getElementById('dashStreak').textContent = currentStreak;
+
+    var dashFlame = document.getElementById('dash-streak-flame');
+    if (dashFlame) {
+      var dashTier = flameTierForStreak(currentStreak);
+      dashFlame.setAttribute('data-tier', dashTier);
+      var dashBadge = document.getElementById('dash-streak-badge');
+      if (dashBadge) {
+        if (dashTier >= 4) { dashBadge.textContent = currentStreak; dashBadge.classList.remove('hidden'); }
+        else dashBadge.classList.add('hidden');
+      }
+    }
+    var dashBest = document.getElementById('dash-streak-best');
+    if (dashBest) dashBest.textContent = 'Best: ' + bestStreak;
+
     document.getElementById('dashQuestions').textContent = questionCount;
     document.getElementById('dashMissed').textContent = missedQuestionIds.length;
 

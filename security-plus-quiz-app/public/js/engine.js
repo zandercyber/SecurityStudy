@@ -116,6 +116,67 @@ function renderStatbar() {
   document.getElementById('stat-correct').textContent = correctCount;
   document.getElementById('stat-acc').textContent = questionCount ? Math.round(100 * correctCount / questionCount) + '%' : '--';
   document.getElementById('stat-streak').textContent = currentStreak;
+  updateStreakFlame();
+}
+
+// ---- Streak flame widget: purely presentational, driven off currentStreak/bestStreak. ----
+// Tracks the previously-rendered values itself so it can tell "grew a tier" from "just
+// broke" from "surpassed personal best" without state.js needing to know animations exist.
+var _flameLastStreak = null;
+var _flameLastBest = null;
+var _flameBreakTimeout = null;
+
+function setFlameTier(flame, badge, tier, streakForBadge) {
+  flame.setAttribute('data-tier', tier);
+  if (!badge) return;
+  if (tier >= 4) {
+    badge.textContent = streakForBadge;
+    badge.classList.remove('hidden');
+  } else {
+    badge.classList.add('hidden');
+  }
+}
+
+function updateStreakFlame() {
+  var flame = document.getElementById('stat-streak-flame');
+  if (!flame) return;
+  var badge = document.getElementById('stat-streak-badge');
+  var bestEl = document.getElementById('stat-streak-best');
+
+  if (_flameBreakTimeout) { clearTimeout(_flameBreakTimeout); _flameBreakTimeout = null; }
+
+  var broke = _flameLastStreak !== null && _flameLastStreak > 0 && currentStreak === 0;
+  var grew = _flameLastStreak !== null && currentStreak > _flameLastStreak;
+  var newBest = _flameLastBest !== null && bestStreak > _flameLastBest && currentStreak === bestStreak;
+
+  flame.classList.remove('flame-break', 'flame-pulse');
+
+  if (broke) {
+    flame.classList.add('flame-break');
+    _flameBreakTimeout = setTimeout(function() {
+      flame.classList.remove('flame-break');
+      setFlameTier(flame, badge, 0, currentStreak);
+      _flameBreakTimeout = null;
+    }, 520);
+  } else {
+    setFlameTier(flame, badge, flameTierForStreak(currentStreak), currentStreak);
+    if (grew) {
+      void flame.offsetWidth; // restart the pulse animation even if it was just showing
+      flame.classList.add('flame-pulse');
+    }
+  }
+
+  if (bestEl) {
+    bestEl.textContent = 'Best: ' + bestStreak;
+    if (newBest) {
+      bestEl.classList.remove('best-flash');
+      void bestEl.offsetWidth;
+      bestEl.classList.add('best-flash');
+    }
+  }
+
+  _flameLastStreak = currentStreak;
+  _flameLastBest = bestStreak;
 }
 
 function readinessLabel(acc) {
